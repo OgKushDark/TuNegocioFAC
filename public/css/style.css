@@ -1,0 +1,43 @@
+.loginBox{
+	position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 230px;
+    padding: 26px 25px;
+    box-sizing: border-box;
+    background: rgba(13, 13, 14, 0.824);
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+.login-logo{
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 230px;
+	box-sizing: border-box;
+}
+
+.loginBox button[type="submit"]{
+
+	height:40px;
+	color:#ffffff;
+	font-size:16px;
+	cursor:pointer;
+	border-radius:5px;
+}
+
+.login-box-msg{
+	color:#E6E6E6;
+}
+
+@media(max-width:480px){
+	form{
+		width:100%;
+	}
+}
+	
