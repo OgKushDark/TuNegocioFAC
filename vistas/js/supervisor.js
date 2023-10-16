@@ -14,100 +14,10 @@ function init(){
     $('#navSupervisorLi').addClass("active");
 }
 
-$.post("../controladores/fichasupervision.php?op=selectOpciones", function(r){
+$.post("../controladores/persona.php?op=selectZona", function(r){
 
-	    $("#cbxCondicionProducto").html(r);
-	    $('#cbxCondicionProducto').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones", function(r){
-
-	    $("#cbxCondicionPreparacion").html(r);
-	    $('#cbxCondicionPreparacion').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones", function(r){
-
-	    $("#cbxHigieneUtensilios").html(r);
-	    $('#cbxHigieneUtensilios').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones1", function(r){
-
-	    $("#cbxApilado").html(r);
-	    $('#cbxApilado').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones1", function(r){
-
-	    $("#cbxHumedad").html(r);
-	    $('#cbxHumedad').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones1", function(r){
-
-	    $("#cbxSeguridad").html(r);
-	    $('#cbxSeguridad').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones1", function(r){
-
-	    $("#cbxVentilacion").html(r);
-	    $('#cbxVentilacion').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones1", function(r){
-
-	    $("#cbxIluminacion").html(r);
-	    $('#cbxIluminacion').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones1", function(r){
-
-	    $("#cbxLimpieza").html(r);
-	    $('#cbxLimpieza').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxControlDocumentacion").html(r);
-	    $('#cbxControlDocumentacion').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxControlBeneficiarios").html(r);
-	    $('#cbxControlBeneficiarios').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxParticipacion").html(r);
-	    $('#cbxParticipacion').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxApoyoGastos").html(r);
-	    $('#cbxApoyoGastos').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxAsistenciaAsamblea").html(r);
-	    $('#cbxAsistenciaAsamblea').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxAsistenciaActividad").html(r);
-	    $('#cbxAsistenciaActividad').selectpicker('refresh');
-
-	});
-$.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
-
-	    $("#cbxDesarrolloParticipacion").html(r);
-	    $('#cbxDesarrolloParticipacion').selectpicker('refresh');
+	    $("#idzona").html(r);
+	    $('#idzona').selectpicker('refresh');
 
 	});
 

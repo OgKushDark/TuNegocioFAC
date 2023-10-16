@@ -283,16 +283,35 @@ if (empty($regn)) {
           }
           ?>
 
-          <!-- NUEEVA OPCION PARA SUPERVISION -->
+          <!-- NUEVA OPCION PARA SUPERVISION -->
           <?php
           if ($_SESSION['inicio'] == 1) {
             echo '<li class="treeview" id="navSupervision">
               <a href="#">
                 <i class="fa fa-user"></i> <span>Ficha de Supervisión</span>
+                <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li id="navSupervisionLi"><a href="ficha_supervision.php"><i class="fa fa-plus-circle"></i> Ficha de Supervisión</a></li>
               </ul>
+
+              
+              <ul class="treeview-menu">
+                <li id="navSupervisorLi"><a href="supervisor.php"><i class="fa fa-plus-circle"></i> Supervisor</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navSupervisionLi"><a href="proveedor.php"><i class="fa fa-plus-circle"></i> Reponsable</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navSupervisionLi"><a href="zona.php"><i class="fa fa-plus-circle"></i> Zona</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navOpcionesLi"><a href="opciones.php"><i class="fa fa-plus-circle"></i> Opciones</a></li>
+              </ul>
+
             </li>';
           }
           ?>

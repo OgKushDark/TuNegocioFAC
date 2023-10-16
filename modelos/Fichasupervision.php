@@ -2,7 +2,7 @@
 //Incluímos inicialmente la conexión a la base de datos
 require "../configuraciones/Conexion.php";
 
-Class Persona
+Class Fichasupervision
 {
 	//Implementamos nuestro constructor
 	public function __construct()
@@ -63,7 +63,17 @@ Class Persona
 	//Implementar un método para listar los registros y mostrar en el select
 	public function select()
 	{
-		$sql="SELECT * FROM zona where condicion=1";
+		$sql="SELECT * FROM opciones where condicion=1 and tipo='CONDICIÓN DE HIGIENE Y PREPARACION'";
+		return ejecutarConsulta($sql);		
+	}
+	public function select1()
+	{
+		$sql="SELECT * FROM opciones where condicion=1 and tipo='ALMACENAMIENTO DE LOS ALIMENTOS EN LOS COMITE DE VASO DE LECHE'";
+		return ejecutarConsulta($sql);		
+	}
+	public function select2()
+	{
+		$sql="SELECT * FROM opciones where condicion=1 and tipo='CONTROL DE DOCUMENTACION'";
 		return ejecutarConsulta($sql);		
 	}
 

@@ -1,7 +1,7 @@
 <?php 
-require_once "../modelos/Persona.php";
+require_once "../modelos/Fichasupervision.php";
 
-$persona=new Persona();
+$ficha=new Fichasupervision();
 
 $idpersona=isset($_POST["idpersona"])? limpiarCadena($_POST["idpersona"]):"";
 $tipo_persona=isset($_POST["tipo_persona"])? limpiarCadena($_POST["tipo_persona"]):"";
@@ -89,15 +89,38 @@ switch ($_GET["op"]){
 
 	break;
 
-	case "selectZona":
-		require_once "../modelos/Persona.php";
-		$persona = new Persona();
+	case "selectOpciones":
+		require_once "../modelos/Fichasupervision.php";
+		$fichas = new Fichasupervision();
 
-		$rspta = $persona->select();
+		$rspta = $fichas->select();
 
 		while ($reg = $rspta->fetch_object())
 				{
-					echo '<option value=' . $reg->idzona . '>' . $reg->nombre . '</option>';
+					echo '<option value=' . $reg->idopciones . '>' . $reg->nombre . '</option>';
+				}
+	break;
+
+	case "selectOpciones1":
+		require_once "../modelos/Fichasupervision.php";
+		$fichas = new Fichasupervision();
+
+		$rspta = $fichas->select1();
+
+		while ($reg = $rspta->fetch_object())
+				{
+					echo '<option value=' . $reg->idopciones . '>' . $reg->nombre . '</option>';
+				}
+	break;
+	case "selectOpciones2":
+		require_once "../modelos/Fichasupervision.php";
+		$fichas = new Fichasupervision();
+
+		$rspta = $fichas->select2();
+
+		while ($reg = $rspta->fetch_object())
+				{
+					echo '<option value=' . $reg->idopciones . '>' . $reg->nombre . '</option>';
 				}
 	break;
 

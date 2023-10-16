@@ -10,8 +10,8 @@ function init(){
 		guardaryeditar(e);	
 	})
 	
-	$('#navVentasV').addClass("treeview active");
-    $('#navClientesLi').addClass("active");
+	$('#navSupervision').addClass("treeview active");
+    $('#navSupervisionLi').addClass("active");
 }
 
 //Función limpiar
@@ -24,6 +24,10 @@ function limpiar()
 	$("#email").val("");
 	$("#fecha_hora").val("");
 	$("#idpersona").val("");
+	$("#comite").val("");
+	$("#asentamiento").val("");
+	$("#idzona").val("");
+	$("#cocina").val("");
 }
 
 //Función mostrar formulario

@@ -27,7 +27,7 @@ if (!isset($_SESSION["idpersonal"])) {
         <div dixv class="panel panel-default" style="border-color: #666; border-width: 3px; border-style: double;">
           <div class="panel-heading">
             <div class="box-header with-border">
-              <h1 class="box-title">Clientes</h1>
+              <h1 class="box-title">Supervisores</h1>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse">
                   <i class="fa fa-minus"></i>
@@ -85,7 +85,7 @@ if (!isset($_SESSION["idpersonal"])) {
             <div class="modal-header" style="background:#3c8dbc; color:white">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title">
-                Clientes</h4>
+                Supervidor</h4>
             </div>
 
             <div class="modal-body panel-body" style="padding: 20px">
@@ -94,7 +94,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <label for="name" class="col-sm-2 control-label">Nombre:</label>
                 <div class="col-sm-4">
                   <input type="hidden" name="idpersona" id="idpersona">
-                  <input type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
+                  <input type="hidden" name="tipo_persona" id="tipo_persona" value="Supervisor">
                   <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del Supervisor" required>
                 </div>
 
@@ -169,7 +169,7 @@ if (!isset($_SESSION["idpersonal"])) {
   }
   require 'modulos/footer.php';
   ?>
-  <script type="text/javascript" src="js/cliente.js"></script>
+  <script type="text/javascript" src="js/supervisor.js"></script>
   <script type="text/javascript" src="js/stocksbajos.js"></script>
 <?php
 }
