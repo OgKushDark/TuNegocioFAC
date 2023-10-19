@@ -21,7 +21,7 @@ if (!isset($_SESSION["idpersonal"])) {
           <li><a href="inicio
         .php"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-          <li class="active">Administrar Zona</li>
+          <li class="active">Administrar Comite</li>
 
         </ol>
       </section>
@@ -29,7 +29,7 @@ if (!isset($_SESSION["idpersonal"])) {
         <div class="panel panel-default" style="border-color: #666; border-width: 3px; border-style: double;">
           <div class="panel-heading">
             <div class="box-header with-border">
-              <h1 class="box-title">Zona</h1>
+              <h1 class="box-title">Comite</h1>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse">
                   <i class="fa fa-minus"></i>
@@ -82,15 +82,47 @@ if (!isset($_SESSION["idpersonal"])) {
             </div>
 
             <div class="modal-body">
+                          
               <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">Nombre:</label>
+                <label for="name" class="col-sm-2 control-label">Comite:</label>
                 <div class="col-sm-10">
-                  <input type="hidden" name="idzona" id="idzona">
-                  <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required>
+                  <input type="text" class="form-control" name="nombre" id="nombre" maxlength="500" placeholder="comite" required>
                 </div>
               </div>
-            
               
+            
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">AAHH:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="direccion" id="direccion" maxlength="500" placeholder="Dirección" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Presidente:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="responsable" id="responsable" maxlength="500" placeholder="Responsable" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Dirección:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="dirresponsable" id="dirresponsable" maxlength="500" placeholder="Dirección" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Cocinero:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="cocinero" id="cocinero" maxlength="500" placeholder="cocinero" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="idzona" class="col-sm-2 control-label">Zona: </label>
+                  <div class="col-sm-10">
+                    <select id="idzona" name="idzona" class="form-control selectpicker" data-live-search="true" title="Seleccione zona" required></select>
+                  </div>
+              </div>
             </div>
 
             <div class="modal-footer">
@@ -108,7 +140,7 @@ if (!isset($_SESSION["idpersonal"])) {
   }
   require 'modulos/footer.php';
   ?>
-  <script type="text/javascript" src="js/zona.js"></script>
+  <script type="text/javascript" src="js/comite.js"></script>
   <script type="text/javascript" src="js/stocksbajos.js"></script>
 <?php
 }

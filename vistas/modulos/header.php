@@ -305,11 +305,15 @@ if (empty($regn)) {
               </ul>
 
               <ul class="treeview-menu">
-                <li id="navSupervisionLi"><a href="zona.php"><i class="fa fa-plus-circle"></i> Zona</a></li>
+                <li id="navZonaLi"><a href="zona.php"><i class="fa fa-plus-circle"></i> Zona</a></li>
               </ul>
 
               <ul class="treeview-menu">
                 <li id="navOpcionesLi"><a href="opciones.php"><i class="fa fa-plus-circle"></i> Opciones</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navComiteLi"><a href="comite.php"><i class="fa fa-plus-circle"></i> Comite</a></li>
               </ul>
 
             </li>';

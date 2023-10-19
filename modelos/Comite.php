@@ -2,7 +2,7 @@
 //Incluímos inicialmente la conexión a la base de datos
 require "../configuraciones/Conexion.php";
 
-Class Zona
+Class Comite
 {
 	//Implementamos nuestro constructor
 	public function __construct()
@@ -11,10 +11,10 @@ Class Zona
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($nombre)
+	public function insertar($nombre,$direccion,$responsable,$dirresponsable,$cocinero,$idzona)
 	{
-		$sql="INSERT INTO zona (nombre,condicion)
-		VALUES ('$nombre','1')";
+		$sql="INSERT INTO comite (nombre,direccion, responsable, dirresponsable, cocinero,idzona,condicion)
+		VALUES ('$nombre','$direccion','$responsable','$dirresponsable','$cocinero','$idzona','1')";
 		return ejecutarConsulta($sql);
 	}
 
@@ -49,15 +49,16 @@ Class Zona
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT * FROM zona";
+		$sql="SELECT * FROM comite";
 		return ejecutarConsulta($sql);		
 	}
 	//Implementar un método para listar los registros y mostrar en el select
 	public function select()
 	{
-		$sql="SELECT * FROM categoria where condicion=1";
+		$sql="SELECT * FROM zona where condicion=1";
 		return ejecutarConsulta($sql);		
 	}
+
 }
 
 ?>

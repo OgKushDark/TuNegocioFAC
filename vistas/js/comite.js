@@ -11,14 +11,25 @@ function init(){
 	});
 	
     $('#navSupervision').addClass("treeview active");
-    $('#navZonaLi').addClass("active");
+    $('#navComiteLi').addClass("active");
 
 }
+$.post("../controladores/comite.php?op=selectZona", function(r){
+
+	    $("#idzona").html(r);
+	    $('#idzona').selectpicker('refresh');
+
+	});
 
 //Función limpiar
 function limpiar()
 {
 	$("#nombre").val("");
+	$("#idcomite").val("");
+	$("#direccion").val("");
+	$("#responsable").val("");
+	$("#dirresponsable").val("");
+	$("#cocinero").val("");
 	$("#idzona").val("");
 
 }
@@ -67,7 +78,7 @@ function listar()
         buttons: ['pageLength','copy','excel', 'pdf'],
 		"ajax":
 				{
-					url: '../controladores/zona.php?op=listar',
+					url: '../controladores/comite.php?op=listar',
 					type : "get",
 					dataType : "json",						
 					error: function(e){
@@ -88,7 +99,7 @@ function guardaryeditar(e)
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
-		url: "../controladores/zona.php?op=guardaryeditar",
+		url: "../controladores/comite.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -97,7 +108,7 @@ function guardaryeditar(e)
 	    success: function(datos)
 	    {                    
 	          swal({
-				  title: 'Zona',
+				  title: 'Comite',
 				  type: 'success',
 					text:datos
 				});

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 14:16:31
+-- Tiempo de generación: 17-10-2023 a las 13:50:41
 -- Versión del servidor: 10.4.16-MariaDB
 -- Versión de PHP: 7.4.12
 
@@ -40,6 +40,31 @@ CREATE TABLE `categoria` (
 INSERT INTO `categoria` (`idcategoria`, `nombre`, `condicion`) VALUES
 (6580, 'OTROS', 1),
 (6581, 'SERVICIOS', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comite`
+--
+
+CREATE TABLE `comite` (
+  `idcomite` int(11) NOT NULL,
+  `nombre` varchar(400) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `responsable` varchar(450) NOT NULL,
+  `dirresponsable` varchar(450) NOT NULL,
+  `cocinero` varchar(450) NOT NULL,
+  `idzona` int(11) NOT NULL,
+  `condicion` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comite`
+--
+
+INSERT INTO `comite` (`idcomite`, `nombre`, `direccion`, `responsable`, `dirresponsable`, `cocinero`, `idzona`, `condicion`) VALUES
+(2, 'Comite 03', 'direccion', 'responsable 01', 'dirección responsable 01', 'cocinero 01', 0, 1),
+(5, 'comite 01', 'direccion 01', 'responsable 01', 'dirección responsable 01', 'cocinero 01', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -698,21 +723,15 @@ INSERT INTO `venta` (`idventa`, `idcliente`, `idPersonal`, `idmotivo_nota`, `tip
 CREATE TABLE `zona` (
   `idzona` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `comite` varchar(400) NOT NULL,
-  `direccion` varchar(100) NOT NULL,
-  `responsable` varchar(450) NOT NULL,
-  `dirresponsable` varchar(450) NOT NULL,
-  `cocinero` varchar(450) NOT NULL,
-  `condicion` tinyint(1) NOT NULL DEFAULT 1
+  `condicion` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `zona`
 --
 
-INSERT INTO `zona` (`idzona`, `nombre`, `comite`, `direccion`, `responsable`, `dirresponsable`, `cocinero`, `condicion`) VALUES
-(1, 'Zona 01', 'Comite 01', 'direccion 01', '', '', '', 1),
-(2, 'zona 03', 'Comite 03', 'direccion', 'responsable 01', 'dirección responsable 01', 'cocinero 01', 1);
+INSERT INTO `zona` (`idzona`, `nombre`, `condicion`) VALUES
+(1, 'Zona 01', 1);
 
 --
 -- Índices para tablas volcadas
@@ -723,6 +742,12 @@ INSERT INTO `zona` (`idzona`, `nombre`, `comite`, `direccion`, `responsable`, `d
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`idcategoria`);
+
+--
+-- Indices de la tabla `comite`
+--
+ALTER TABLE `comite`
+  ADD PRIMARY KEY (`idcomite`);
 
 --
 -- Indices de la tabla `compra`
@@ -880,6 +905,12 @@ ALTER TABLE `categoria`
   MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6582;
 
 --
+-- AUTO_INCREMENT de la tabla `comite`
+--
+ALTER TABLE `comite`
+  MODIFY `idcomite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
@@ -1003,7 +1034,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `zona`
 --
 ALTER TABLE `zona`
-  MODIFY `idzona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idzona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
