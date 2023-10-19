@@ -54,10 +54,66 @@ if (!isset($_SESSION["nombre"])) {
                             <div class="panel-body">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="panel-heading"><h2><b>FICHA DE SUPERVISIÓN Nº: <span>147</span></b></h2></div>
                                         <div class="row">
                                             <div class="col-md-6">
+                                                <div class="panel-heading"><h2><b>FICHA DE SUPERVISIÓN Nº: <span>147</span></b></h2></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <br><br>
+                                                <div class="col-md-3">
+                                                    <label>COMITE: </label>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <select name="cbxComite" id="cbxComite"
+                                                        class="form-control selectpicker" data-live-search="true" title="Seleccione opción" required>
+                                                    </select>
+                                                </div>
+                                                <br><br>
+                                                <div class="col-md-3">
+                                                    <label>AA.HH: </label>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="txtAAHH" id="txtAAHH" required>
+                                                </div>
+                                                <br><br>
+                                                <div class="col-md-3">
+                                                    <label>FECHA Y HORA: </label>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="date" class="form-control" name="txtFechaHora" id="txtFechaHora">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
                                                 <label><b><h3>1.- DATOS DE LOS RESPONSABLES</h3></b></label>
+                                            </div>
+                                            <br><br>
+                                            <div class="col-md-4">
+                                                <label>NOMBRE DE LA PRESIDENTA</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" name="txtNombrePresidenta" id="txtNombrePresidenta">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>DNI: </label>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="text" class="form-control" name="txtDni" id="txtDni">
+                                            </div>
+                                            <br><br><br>
+                                            <div class="col-md-4">
+                                                <label>DIRECCIÓN: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="txtDireccion" id="txtDireccion">
+                                            </div>
+                                            <br><br>
+                                            <div class="col-md-4">
+                                                <label>NOMBRE DE LA RESPONSABLE DE COCINA: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="txtResponsableCocina" id="txtResponsableCocina">
                                             </div>
                                         </div>
                                         <br>
