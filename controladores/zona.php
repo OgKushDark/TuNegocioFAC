@@ -5,16 +5,11 @@ $zona=new zona();
 
 $idzona=isset($_POST["idzona"])? limpiarCadena($_POST["idzona"]):"";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
-$comite=isset($_POST["comite"])? limpiarCadena($_POST["comite"]):"";
-$direccion=isset($_POST["direccion"])? limpiarCadena($_POST["direccion"]):"";
-$responsable=isset($_POST["responsable"])? limpiarCadena($_POST["responsable"]):"";
-$dirresponsable=isset($_POST["dirresponsable"])? limpiarCadena($_POST["dirresponsable"]):"";
-$cocinero=isset($_POST["cocinero"])? limpiarCadena($_POST["cocinero"]):"";
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idzona)){
-			$rspta=$zona->insertar($nombre,$comite,$direccion, $responsable, $dirresponsable, $cocinero);
+			$rspta=$zona->insertar($nombre);
 			echo $rspta ? "Zona registrada" : "Zona no se pudo registrar";
 		}
 		else {
