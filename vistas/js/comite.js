@@ -28,6 +28,7 @@ function limpiar()
 	$("#idcomite").val("");
 	$("#direccion").val("");
 	$("#responsable").val("");
+	$("#DNI").val("");
 	$("#dirresponsable").val("");
 	$("#cocinero").val("");
 	$("#idzona").val("");

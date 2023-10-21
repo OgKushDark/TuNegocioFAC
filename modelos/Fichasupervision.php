@@ -76,6 +76,19 @@ Class Fichasupervision
 		$sql="SELECT * FROM opciones where condicion=1 and tipo='CONTROL DE DOCUMENTACION'";
 		return ejecutarConsulta($sql);		
 	}
+	public function SelectComites()
+	{
+		$sql = "SELECT * FROM comite";
+		return ejecutarConsulta($sql);
+	}
+	public function obtenerDataPorComite($comiteID){
+		$sql = "SELECT s.direccion, s.responsable,s.dni ,s.dirresponsable,s.cocinero
+				FROM zona z
+				INNER JOIN comite s on s.idzona = z.idzona
+				WHERE s.idcomite = '$comiteID'";
+		
+		return ejecutarConsulta($sql);
+	}
 
 }
 

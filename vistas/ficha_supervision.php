@@ -65,7 +65,7 @@ if (!isset($_SESSION["nombre"])) {
                                                 </div>
                                                 <div class="col-md-8">
                                                     <select name="cbxComite" id="cbxComite"
-                                                        class="form-control selectpicker" data-live-search="true" title="Seleccione opción" required>
+                                                        class="form-control selectpicker" data-live-search="true" title="Seleccione opción" required onchange="obtenerDataPorComite()">
                                                     </select>
                                                 </div>
                                                 <br><br>

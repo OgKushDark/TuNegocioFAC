@@ -106,6 +106,13 @@ if (!isset($_SESSION["idpersonal"])) {
               </div>
 
               <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">DNI:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="DNI" id="DNI" maxlength="8" placeholder="DNI" required>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Dirección:</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" name="dirresponsable" id="dirresponsable" maxlength="500" placeholder="Dirección" required>

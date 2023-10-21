@@ -6,6 +6,7 @@ $comite=new Comite();
 $idcomite=isset($_POST["idcomite"])? limpiarCadena($_POST["idcomite"]):"";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $direccion=isset($_POST["direccion"])? limpiarCadena($_POST["direccion"]):"";
+$DNI=isset($_POST["DNI"])? limpiarCadena($_POST["DNI"]):"";
 $responsable=isset($_POST["responsable"])? limpiarCadena($_POST["responsable"]):"";
 $dirresponsable=isset($_POST["dirresponsable"])? limpiarCadena($_POST["dirresponsable"]):"";
 $cocinero=isset($_POST["cocinero"])? limpiarCadena($_POST["cocinero"]):"";
@@ -14,7 +15,7 @@ $idzona=isset($_POST["idzona"])? limpiarCadena($_POST["idzona"]):"";
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idcomite)){
-			$rspta=$comite->insertar($nombre,$direccion, $responsable, $dirresponsable, $cocinero,$idzona);
+			$rspta=$comite->insertar($nombre,$direccion, $responsable,$DNI, $dirresponsable, $cocinero,$idzona);
 			echo $rspta ? "Comite registrada" : "Comite no se pudo registrar";
 		}
 		else {

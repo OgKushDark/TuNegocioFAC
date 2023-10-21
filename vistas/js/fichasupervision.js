@@ -110,6 +110,10 @@ $.post("../controladores/fichasupervision.php?op=selectOpciones2", function(r){
 	    $('#cbxDesarrolloParticipacion').selectpicker('refresh');
 
 	});
+$.post("../controladores/fichasupervision.php?op=selectComites", function(r){
+	$("#cbxComite").html(r);
+	$("#cbxComite").selectpicker('refresh');
+});
 
 //Función limpiar
 function limpiar()
@@ -259,6 +263,28 @@ function eliminar(idpersona)
 		});
 }
 
+function obtenerDataPorComite(){
+	let idComite = $("#cbxComite").val();
+	
+	$.post("../controladores/fichasupervision.php?op=obtenerDataPorComite",{idComite : idComite}, function(data, status)
+	{
+		data1 = JSON.parse(data);
+		console.log(data1.aaData);
+		dataResp = data1.aaData[0];
+		console.log(data1.aaData[0]);
+		console.log(dataResp[1]);
+
+
+	
+	$("#txtAAHH").val(dataResp[0]);
+	$("#txtNombrePresidenta").val(dataResp[1]);
+	$("#txtDni").val(dataResp[2]);
+	$("#txtDireccion").val(dataResp[3]);
+	$("#txtResponsableCocina").val(dataResp[4]);
+	
+	
+	});
+}
 
 
 init();

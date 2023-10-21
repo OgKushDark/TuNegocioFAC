@@ -15,6 +15,8 @@ $fecha_hora=isset($_POST["fecha_hora"])? limpiarCadena($_POST["fecha_hora"]):"";
 $idzona=isset($_POST["idzona"])? limpiarCadena($_POST["idzona"]):"";
 
 
+$idComite=isset($_POST["idComite"])? $_POST["idComite"] : '' ;
+
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idpersona)){
@@ -122,6 +124,41 @@ switch ($_GET["op"]){
 				{
 					echo '<option value=' . $reg->idopciones . '>' . $reg->nombre . '</option>';
 				}
+	break;
+	case "selectComites":	
+		$fichas = new Fichasupervision();
+
+		$rspta = $fichas->SelectComites();
+
+		while($reg = $rspta->fetch_object())
+				{
+					echo '<option value=' .$reg->idcomite . '>' . $reg->nombre . '</option>';
+				}
+	break;
+	case "obtenerDataPorComite":
+		$fichas = new Fichasupervision();
+		$rspta = $fichas->obtenerDataPorComite($idComite);
+		/*echo "<script>alert(".$idComite.")</script>";*/
+
+		$data= Array();
+
+ 		while ($reg=$rspta->fetch_object()){
+ 			$data[]=array(
+ 				"0"=>$reg->direccion,
+ 				"1"=>$reg->responsable,
+ 				"2"=>$reg->dni,
+ 				"3"=>$reg->dirresponsable,
+ 				"4"=>$reg->cocinero
+ 				);
+ 		}
+		 $results = array(
+			"sEcho"=>1, //Información para el datatables
+			"iTotalRecords"=>count($data), //enviamos el total registros al datatable
+			"iTotalDisplayRecords"=>count($data), //enviamos el total registros a visualizar
+			"aaData"=>$data);
+ 		
+		echo json_encode($results);
+
 	break;
 
 
