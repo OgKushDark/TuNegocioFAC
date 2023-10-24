@@ -49,14 +49,16 @@ if (!isset($_SESSION["idpersonal"])) {
             <br><br>
             <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover" width="100%">
               <thead>
-                <th>Nombre</th>
+                <th>Opción</th>
+                <th>Pregunta</th>
                 <th>Estado</th>
                 <th>Acciones</th>
               </thead>
               <tbody>
               </tbody>
               <tfoot>
-                <th>Nombre</th>
+                <th>Opción</th>
+                <th>Pregunta</th>
                 <th>Estado</th>
                 <th>Acciones</th>
               </tfoot>

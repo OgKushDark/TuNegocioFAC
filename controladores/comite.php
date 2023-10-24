@@ -19,25 +19,25 @@ switch ($_GET["op"]){
 			echo $rspta ? "Comite registrada" : "Comite no se pudo registrar";
 		}
 		else {
-			$rspta=$categoria->editar($idcategoria,$nombre);
-			echo $rspta ? "Categoría actualizada" : "Categoría no se pudo actualizar";
+			$rspta=$comite->editar($idcomite,$nombre,$direccion, $responsable,$DNI, $dirresponsable, 	$cocinero,$idzona);
+			echo $rspta ? "Comite actualizada" : "Comite no se pudo actualizar";
 		}
 	break;
 
 	case 'desactivar':
-		$rspta=$categoria->desactivar($idcategoria);
- 		echo $rspta ? "Categoría Desactivada" : "Categoría no se puede desactivar";
+		$rspta=$comite->desactivar($idcomite);
+ 		echo $rspta ? "Comite Desactivada" : "Comite no se puede desactivar";
  		break;
 	break;
 
 	case 'activar':
-		$rspta=$categoria->activar($idcategoria);
- 		echo $rspta ? "Categoría activada" : "Categoría no se puede activar";
+		$rspta=$comite->activar($idcomite);
+ 		echo $rspta ? "Comite activada" : "Comite no se puede activar";
  		break;
 	break;
 
 	case 'mostrar':
-		$rspta=$categoria->mostrar($idcategoria);
+		$rspta=$comite->mostrar($idcomite);
  		//Codificar el resultado utilizando json
  		echo json_encode($rspta);
  		break;
@@ -51,9 +51,15 @@ switch ($_GET["op"]){
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
  				"0"=>$reg->nombre,
- 				"1"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
+ 				"1"=>$reg->direccion,
+ 				"2"=>$reg->responsable,
+ 				"3"=>$reg->DNI,
+ 				"4"=>$reg->dirresponsable,
+ 				"5"=>$reg->cocinero,
+ 				"6"=>$reg->Zona,
+ 				"7"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
  				'<span class="badge bg-red">DESACTIVADO</span>',
- 				"2"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomite.')"><i class="fa fa-pencil"></i></button>'.
+ 				"8"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomite.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idcomite.')"><i class="fa fa-close"></i></button>':
  					'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomite.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-primary btn-xs" onclick="activar('.$reg->idcomite.')"><i class="fa fa-check"></i></button>'

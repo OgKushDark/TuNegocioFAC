@@ -46,9 +46,10 @@ switch ($_GET["op"]){
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
  				"0"=>$reg->nombre,
- 				"1"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
+ 				"1"=>$reg->tipo,
+ 				"2"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
  				'<span class="badge bg-red">DESACTIVADO</span>',
- 				"2"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idopciones.')"><i class="fa fa-pencil"></i></button>'.
+ 				"3"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idopciones.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idopciones.')"><i class="fa fa-close"></i></button>':
  					'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idopciones.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-primary btn-xs" onclick="activar('.$reg->idopciones.')"><i class="fa fa-check"></i></button>'

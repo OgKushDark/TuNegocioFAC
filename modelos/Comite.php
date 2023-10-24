@@ -19,37 +19,41 @@ Class Comite
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idcategoria,$nombre)
+	public function editar($idcomite,$nombre,$direccion,$responsable,$DNI,$dirresponsable,$cocinero,	$idzona)
 	{
-		$sql="UPDATE categoria SET nombre='$nombre' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE comite SET nombre='$nombre', direccion='$direccion',responsable='$responsable', 
+								DNI ='$DNI',dirresponsable='$dirresponsable',cocinero='$cocinero',idzona='$idzona'
+		WHERE idcomite='$idcomite'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para desactivar categorías
-	public function desactivar($idcategoria)
+	public function desactivar($idcomite)
 	{
-		$sql="UPDATE categoria SET condicion='0' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE comite SET condicion='0' WHERE idcomite='$idcomite'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para activar categorías
-	public function activar($idcategoria)
+	public function activar($idcomite)
 	{
-		$sql="UPDATE categoria SET condicion='1' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE comite SET condicion='1' WHERE idcomite='$idcomite'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementar un método para mostrar los datos de un registro a modificar
-	public function mostrar($idcategoria)
+	public function mostrar($idcomite)
 	{
-		$sql="SELECT * FROM categoria WHERE idcategoria='$idcategoria'";
+		$sql="SELECT * FROM comite WHERE idcomite='$idcomite'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT * FROM comite";
+		$sql="SELECT c.idcomite, c.nombre, c.direccion, c.responsable, c.DNI, c.dirresponsable, 			 c.cocinero, z.nombre as Zona, c.condicion
+ 					 FROM comite c
+ 					 inner join zona z on z.idzona = c.idzona";
 		return ejecutarConsulta($sql);		
 	}
 	//Implementar un método para listar los registros y mostrar en el select
