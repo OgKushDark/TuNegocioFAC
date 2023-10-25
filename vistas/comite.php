@@ -50,6 +50,12 @@ if (!isset($_SESSION["idpersonal"])) {
             <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover" width="100%">
               <thead>
                 <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Responsable</th>
+                <th>DNI</th>
+                <th>Dir. Responsable</th>
+                <th>Cocinero</th>
+                <th>Zona</th>
                 <th>Estado</th>
                 <th>Acciones</th>
               </thead>
@@ -57,6 +63,12 @@ if (!isset($_SESSION["idpersonal"])) {
               </tbody>
               <tfoot>
                 <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Responsable</th>
+                <th>DNI</th>
+                <th>Dir. Responsable</th>
+                <th>Cocinero</th>
+                <th>Zona</th>
                 <th>Estado</th>
                 <th>Acciones</th>
               </tfoot>
@@ -78,7 +90,7 @@ if (!isset($_SESSION["idpersonal"])) {
             <div class="modal-header" style="background:#3c8dbc; color:white">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title">
-                Zonas</h4>
+                Comite</h4>
             </div>
 
             <div class="modal-body">
@@ -86,6 +98,7 @@ if (!isset($_SESSION["idpersonal"])) {
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Comite:</label>
                 <div class="col-sm-10">
+                  <input type="hidden" name="idcomite" id="idcomite">
                   <input type="text" class="form-control" name="nombre" id="nombre" maxlength="500" placeholder="comite" required>
                 </div>
               </div>

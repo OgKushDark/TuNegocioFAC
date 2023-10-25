@@ -32,6 +32,8 @@ function limpiar()
 	$("#dirresponsable").val("");
 	$("#cocinero").val("");
 	$("#idzona").val("");
+	$("#idzona").selectpicker('refresh');
+
 
 }
 
@@ -126,25 +128,32 @@ function guardaryeditar(e)
 	//location.reload();
 }
 
-function mostrar(idcategoria)
+function mostrar(idcomite)
 {
-	$.post("../controladores/categoria.php?op=mostrar",{idcategoria : idcategoria}, function(data, status)
+	$.post("../controladores/comite.php?op=mostrar",{idcomite : idcomite}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
 		$("#nombre").val(data.nombre);
- 		$("#idcategoria").val(data.idcategoria);
+ 		$("#idcomite").val(data.idcomite);
+		$("#direccion").val(data.direccion);
+		$("#responsable").val(data.responsable);
+		$("#DNI").val(data.DNI);
+		$("#dirresponsable").val(data.dirresponsable);
+		$("#cocinero").val(data.cocinero);
+		$("#idzona").val(data.idzona);
+		$('#idzona').selectpicker('refresh');
 
  	})
 }
 
 //Función para desactivar registros
-function desactivar(idcategoria)
+function desactivar(idcomite)
 {
 	swal({
 						    title: "¿Desactivar?",
-						    text: "¿Está seguro Que Desea Desactivar la Categoria?",
+						    text: "¿Está seguro Que Desea Desactivar el Comite?",
 						    type: "warning",
 						    showCancelButton: true,
 								cancelButtonText: "No",
@@ -156,7 +165,7 @@ function desactivar(idcategoria)
 						    showLoaderOnConfirm: true
 						    },function(isConfirm){
 						    if (isConfirm){
-									$.post("../controladores/categoria.php?op=desactivar", {idcategoria : idcategoria}, function(e){
+									$.post("../controladores/comite.php?op=desactivar", {idcomite : idcomite}, function(e){
 										swal(
 											'!!! Desactivada !!!',e,'success')
 					            tabla.ajax.reload();
@@ -168,11 +177,11 @@ function desactivar(idcategoria)
 }
 
 //Función para activar registros
-function activar(idcategoria)
+function activar(idcomite)
 {
 	swal({
 		    title: "¿Activar?",
-		    text: "¿Está seguro Que desea Activar la Categoria?",
+		    text: "¿Está seguro Que desea Activar el Comite?",
 		    type: "warning",
 		    showCancelButton: true,
 				confirmButtonColor: '#0004FA',
@@ -184,7 +193,7 @@ function activar(idcategoria)
 		    showLoaderOnConfirm: true
 		    },function(isConfirm){
 		    if (isConfirm){
-						$.post("../controladores/categoria.php?op=activar", {idcategoria : idcategoria}, function(e){
+						$.post("../controladores/comite.php?op=activar", {idcomite : idcomite}, function(e){
 						swal("!!! Activada !!!", e ,"success");
 								tabla.ajax.reload();
 						});
