@@ -14,14 +14,83 @@ $email=isset($_POST["email"])? limpiarCadena($_POST["email"]):"";
 $fecha_hora=isset($_POST["fecha_hora"])? limpiarCadena($_POST["fecha_hora"]):"";
 $idzona=isset($_POST["idzona"])? limpiarCadena($_POST["idzona"]):"";
 
-
+//OBTENEMOS LOS CAMPOS DE LA FICHA
 $idComite=isset($_POST["idComite"])? $_POST["idComite"] : '' ;
+$nombre_presidenta = isset($_POST["txtNombrePresidenta"]) ? $_POST["txtNombrePresidenta"] : "";
+$dni_presidenta = isset($_POST["txtDni"]) ? $_POST["txtDni"] : "";
+$dir_presidenta = isset($_POST["txtDireccion"]) ? $_POST["txtDireccion"] : "";
+$resp_cocina = isset($_POST["txtResponsableCocina"]) ? $_POST["txtResponsableCocina"] : "";
+$total_beneficiarios = isset($_POST["txtBeneficiarios"]) ? $_POST["txtBeneficiarios"]: "";
+$total_madres_responsables = isset($_POST["txtMadresBeneficiarias"]) ? $_POST["txtMadresBeneficiarias"] : "";
+$raciones_distribuidas = isset($_POST["txtRacionesDistribuidas"]) ? $_POST["txtRacionesDistribuidas"]: "";
+$racion_diaria_leche = isset($_POST["txtRacionLeche"]) ? $_POST["txtRacionLeche"] : "";
+$racion_diaria_hojuelas = isset($_POST["txtRacionHojuelas"]) ? $_POST["txtRacionHojuelas"] : "";
+$nro_dias_preparados = isset($_POST["txtDias"]) ? $_POST["txtDias"] : "";
+$nro_dias_preparados_hojuelas = isset($_POST["txtDiasHojuelas"]) ? $_POST["txtDiasHojuelas"] : "";
+$cantidad_utilizada_leche = isset($_POST["txtCantidad"]) ? $_POST["txtCantidad"] : "";
+$cantidad_utilizada_hojuelas = isset($_POST["txtCantidadHojuelas"]) ? $_POST["txtCantidadHojuelas"] : "";
+$stock_leche = isset($_POST["txtStock"]) ? $_POST["txtStock"] : "";
+$stock_hojuelas = isset($_POST["txtStockHojuelas"]) ? $_POST["txtStockHojuelas"] : "";
+$stock_leche_dia_visita = isset($_POST["txtStockVisita"]) ? $_POST["txtStockVisita"] : "";
+$stock_hojuelas_dia_visita = isset($_POST["txtStockVisitaHojuelas"]) ? $_POST["txtStockVisitaHojuelas"] : "";
+$cantidad_faltante_leche = isset($_POST["txtCantidadFaltante"]) ? $_POST["txtCantidadFaltante"] : "";
+$cantidad_faltante_hojuelas = isset($_POST["txtFaltanteHojuelas"]) ? $_POST["txtFaltanteHojuelas"] : "";
+$cantidad_sobrante_leche = isset($_POST["txtCantidadSobrante"]) ? $_POST["txtCantidadSobrante"] : "";
+$cantidad_sobrante_hojuelas = isset($_POST["txtSobranteHojuelas"]) ? $_POST["txtSobranteHojuelas"] : "";
+$idOpcion_condicion_producto = isset($_POST["cbxCondicionProducto"]) ? $_POST["cbxCondicionProducto"] : "";
+$observacion_condicion_producto = isset($_POST["txtObservacionProducto"]) ? $_POST["txtObservacionProducto"] : "";
+$idOpcion_condicion_higiene = isset($_POST["cbxCondicionPreparacion"]) ? $_POST["cbxCondicionPreparacion"] : "";
+$observacion_codicion_higiene = isset($_POST["txtObservacionPreparacion"]) ? $_POST["txtObservacionPreparacion"] : "";
+$idOpcion_estado_utensilios = isset($_POST["cbxHigieneUtensilios"]) ? $_POST["cbxHigieneUtensilios"] : "";
+$observacion_estado_utensilios = isset($_POST["txtObservacionUtensilios"]) ? $_POST["txtObservacionUtensilios"] : "";
+$idOpcion_apilado = isset($_POST["cbxApilado"]) ? $_POST["cbxApilado"] : "";
+$observacion_apilado = isset($_POST["observacion_apilado"]) ? $_POST["observacion_apilado"] : "";
+$idOpcion_humedad = isset($_POST["cbxHumedad"]) ? $_POST["cbxHumedad"] : "";
+$observacion_humedad = isset($_POST["txtObservacionHumedad"]) ? $_POST["txtObservacionHumedad"] : "";
+$idOpcion_seguridad = isset($_POST["cbxSeguridad"]) ? $_POST["cbxSeguridad"] : "";
+$observacion_seguridad = isset($_POST["txtObservacionSeguridad"]) ? $_POST["txtObservacionSeguridad"] : "";
+$idOpcion_ventilacion = isset($_POST["cbxVentilacion"]) ? $_POST["cbxVentilacion"] : "";
+$observacion_ventilacion = isset($_POST["txtObservacionVentilacion"]) ? $_POST["txtObservacionVentilacion"] : "";
+$idOpcion_iluminacion = isset($_POST["cbxIluminacion"]) ? $_POST["cbxIluminacion"] : "";
+$observacion_iluminacion = isset($_POST["txtObservacionIluminacion"]) ? $_POST["txtObservacionIluminacion"] : "";
+$idOpcion_limpieza = isset($_POST["cbxLimpieza"]) ? $_POST["cbxLimpieza"] : "";
+$observacion_limpieza = isset($_POST["txtObservacionLimpieza"]) ? $_POST["txtObservacionLimpieza"] : "";
+/*
+$resolucion_municipal = isset($_POST["rdbResolucionMunicipalSi"]) ? $_POST["rdbResolucionMunicipalSi"] : $_POST["rdbResolucionMunicipalNo"] ;
+$acta_instalacion_comite = isset($_POST["rdbActaInstalacionSi"]) ? $_POST["rdbActaInstalacionSi"] : $_POST["rdbActaInstalacionNo"] ;
+$libro_actas = isset($_POST["rdbLibroActasSi"]) ? $_POST["rdbLibroActasSi"] : $_POST["rdbLibroActasNo"];
+$cartel_identificacion = isset($_POST["rdbCartelIdentificacionSi"]) ? $_POST["rdbCartelIdentificacionSi"] : $_POST["rdbCartelIdentificacionNo"];
+$sello_comite = isset($_POST["rdbSelloComiteSi"]) ? $_POST["rdbSelloComiteSi"] : $_POST["rdbSelloComiteNo"];
+*/
+$idOpcion_control_preparacion_diario = isset($_POST["cbxControlDocumentacion"]) ? $_POST["cbxControlDocumentacion"] : "";
+$idOpcion_control_diario_beneficiarios = isset($_POST["cbxControlBeneficiarios"]) ? $_POST["cbxControlBeneficiarios"] : "";
+$idOpcion_participacion_rol_cocina = isset($_POST["cbxParticipacion"]) ? $_POST["cbxParticipacion"] : "";
+$idOpcion_apoyo_gastos = isset($_POST["cbxApoyoGastos"]) ? $_POST["cbxApoyoGastos"] : "";
+$idOpcion_asistencia_asamblea_civil = isset($_POST["cbxAsistenciaAsamblea"]) ? $_POST["cbxAsistenciaAsamblea"] : "";
+$idOpcion_asistencia_actividad_mdc = isset($_POST["cbxAsistenciaActividad"]) ? $_POST["cbxAsistenciaActividad"] : "";
+$idOpcion_desarrollo_otras_actividades = isset($_POST["cbxDesarrolloParticipacion"]) ? $_POST["cbxDesarrolloParticipacion"] : "";
+$observaciones_recomendaciones = isset($_POST["txtObservacion"]) ? $_POST["txtObservacion"] : "";
+
+
+
+
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
-		if (empty($idpersona)){
-			$rspta=$persona->insertar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$fecha_hora,$idzona);
-			echo $rspta ? "Persona registrado" : "Persona no se pudo registrar";
+		if (empty($$idComite)){
+			$rspta=$persona->insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
+			$total_madres_responsables,$raciones_distribuidas,$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
+			$nro_dias_preparados_hojuelas,$cantidad_utilizada_leche,$cantidad_utilizada_hojuelas,$stock_leche,$stock_hojuelas,
+			$stock_leche_dia_visita,$stock_hojuelas_dia_visita,$cantidad_faltante_leche,$cantidad_faltante_hojuelas,
+			$cantidad_sobrante_leche,$cantidad_sobrante_hojuelas,$idOpcion_condicion_producto,$observacion_condicion_producto,
+			$idOpcion_condicion_higiene,$observacion_codicion_higiene,$idOpcion_estado_utensilios,$observacion_estado_utensilios,
+			$idOpcion_apilado,$observacion_apilado,$idOpcion_humedad,$observacion_humedad,$idOpcion_seguridad,$observacion_seguridad,
+			$idOpcion_ventilacion,$observacion_ventilacion,$idOpcion_iluminacion,$observacion_iluminacion,$idOpcion_limpieza,
+			$observacion_limpieza,$resolucion_municipal,$acta_instalacion_comite,$libro_actas,$cartel_identificacion,$sello_comite,
+			$idOpcion_control_preparacion_diario,$idOpcion_control_diario_beneficiarios,$idOpcion_participacion_rol_cocina,
+			$idOpcion_apoyo_gastos,$idOpcion_asistencia_asamblea_civil,$idOpcion_asistencia_actividad_mdc,
+			$idOpcion_desarrollo_otras_actividades,$observaciones_recomendaciones);
+			echo $rspta ? "Ficha registrada" : "Ficha no se pudo registrar";
 		}
 		else {
 			$rspta=$persona->editar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$fecha_hora,$idzona);
@@ -90,7 +159,28 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
+	case 'listarFichasSupervision':
+		$fichas = new Fichasupervision();
 
+		$rspta = $fichas->listarFichasSupervision();
+
+		$data = Array();
+
+		while($reg=$rspta->fetch_object()){
+			$data[]=array(
+				"0" => $reg->idFicha,
+				"1" => $reg->nombre_presidenta,
+				"2" => $reg->nombre_responsable_cocina,
+			);
+		}
+			$results = array(
+				"sEcho"=>1, 
+ 				"iTotalRecords"=>count($data), 
+ 				"iTotalDisplayRecords"=>count($data), 
+ 				"aaData"=>$data);
+		echo json_encode($results);
+		
+		break;
 	case "selectOpciones":
 		require_once "../modelos/Fichasupervision.php";
 		$fichas = new Fichasupervision();
@@ -163,4 +253,3 @@ switch ($_GET["op"]){
 
 
 }
-?>

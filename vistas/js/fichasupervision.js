@@ -171,7 +171,7 @@ function listar()
         buttons: ['pageLength','copy','excel', 'pdf'],
 		"ajax":
 				{
-					url: '../controladores/persona.php?op=listarc',
+					url: '../controladores/fichasupervision.php?op=listarFichasSupervision',
 					type : "get",
 					dataType : "json",						
 					error: function(e){
@@ -189,10 +189,10 @@ function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
 	//$("#btnGuardar").prop("disabled",true);
-	var formData = new FormData($("#formulario")[0]);
+	var formData = new FormData($("#frmFichaComite")[0]);
 
 	$.ajax({
-		url: "../controladores/persona.php?op=guardaryeditar",
+		url: "../controladores/fichasupervision.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -201,13 +201,13 @@ function guardaryeditar(e)
 	    success: function(datos)
 	    {                    
 	          swal({
-				  title: 'Cliente',
+				  title: 'Ficha Supervisión',
 				  type: 'success',
 					text:datos
 				});
-              $('#myModal').modal('hide');	          
+             /* $('#myModal').modal('hide');	          
 	          mostrarform(false);
-	          tabla.ajax.reload();
+	          tabla.ajax.reload(); */
 	    }
 
 	});
