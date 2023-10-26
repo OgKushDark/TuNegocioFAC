@@ -55,13 +55,13 @@ $idOpcion_iluminacion = isset($_POST["cbxIluminacion"]) ? $_POST["cbxIluminacion
 $observacion_iluminacion = isset($_POST["txtObservacionIluminacion"]) ? $_POST["txtObservacionIluminacion"] : "";
 $idOpcion_limpieza = isset($_POST["cbxLimpieza"]) ? $_POST["cbxLimpieza"] : "";
 $observacion_limpieza = isset($_POST["txtObservacionLimpieza"]) ? $_POST["txtObservacionLimpieza"] : "";
-/*
-$resolucion_municipal = isset($_POST["rdbResolucionMunicipalSi"]) ? $_POST["rdbResolucionMunicipalSi"] : $_POST["rdbResolucionMunicipalNo"] ;
-$acta_instalacion_comite = isset($_POST["rdbActaInstalacionSi"]) ? $_POST["rdbActaInstalacionSi"] : $_POST["rdbActaInstalacionNo"] ;
-$libro_actas = isset($_POST["rdbLibroActasSi"]) ? $_POST["rdbLibroActasSi"] : $_POST["rdbLibroActasNo"];
-$cartel_identificacion = isset($_POST["rdbCartelIdentificacionSi"]) ? $_POST["rdbCartelIdentificacionSi"] : $_POST["rdbCartelIdentificacionNo"];
-$sello_comite = isset($_POST["rdbSelloComiteSi"]) ? $_POST["rdbSelloComiteSi"] : $_POST["rdbSelloComiteNo"];
-*/
+
+$resolucion_municipal = isset($_POST["rdbResolucionMunicipalSiNo"]) ? $_POST["rdbResolucionMunicipalSiNo"] : "" ;
+$acta_instalacion_comite = isset($_POST["rdbActaInstalacionSiNo"]) ? $_POST["rdbActaInstalacionSiNo"] : "" ;
+$libro_actas = isset($_POST["rdbLibroActasSiNo"]) ? $_POST["rdbLibroActasSiNo"] : "";
+$cartel_identificacion = isset($_POST["rdbCartelIdentificacionSiNo"]) ? $_POST["rdbCartelIdentificacionSiNo"] : "";
+$sello_comite = isset($_POST["rdbSelloComiteSiNo"]) ? $_POST["rdbSelloComiteSiNo"] : "";
+
 $idOpcion_control_preparacion_diario = isset($_POST["cbxControlDocumentacion"]) ? $_POST["cbxControlDocumentacion"] : "";
 $idOpcion_control_diario_beneficiarios = isset($_POST["cbxControlBeneficiarios"]) ? $_POST["cbxControlBeneficiarios"] : "";
 $idOpcion_participacion_rol_cocina = isset($_POST["cbxParticipacion"]) ? $_POST["cbxParticipacion"] : "";
@@ -78,7 +78,7 @@ $observaciones_recomendaciones = isset($_POST["txtObservacion"]) ? $_POST["txtOb
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($$idComite)){
-			$rspta=$persona->insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
+			$rspta=$ficha->insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
 			$total_madres_responsables,$raciones_distribuidas,$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
 			$nro_dias_preparados_hojuelas,$cantidad_utilizada_leche,$cantidad_utilizada_hojuelas,$stock_leche,$stock_hojuelas,
 			$stock_leche_dia_visita,$stock_hojuelas_dia_visita,$cantidad_faltante_leche,$cantidad_faltante_hojuelas,

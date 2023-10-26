@@ -5,7 +5,7 @@ function init(){
 	mostrarform(false);
 	listar();
 
-	$("#myModal").on("submit",function(e)
+	$("#ModalFicha").on("submit",function(e)
 	{
 		guardaryeditar(e);	
 	})
@@ -135,7 +135,7 @@ function mostrarform(flag)
 	if (flag)
 	{
 		$("#listadoregistros").show();
-		$('#myModal').modal('show');
+		$('#ModalFicha').modal('show');
 	}
 	else
 	{
@@ -205,9 +205,9 @@ function guardaryeditar(e)
 				  type: 'success',
 					text:datos
 				});
-             /* $('#myModal').modal('hide');	          
+              $('#ModalFicha').modal('hide');	          
 	          mostrarform(false);
-	          tabla.ajax.reload(); */
+	          tabla.ajax.reload(); 
 	    }
 
 	});

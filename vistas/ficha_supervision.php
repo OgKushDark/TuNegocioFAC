@@ -81,24 +81,6 @@ if (!isset($_SESSION["nombre"])) {
                         <div class="row">
 
                             <div class="col-md-12">
-
-                                <div class="panel panel-default" style="border-color: #666; border-width: 3px; border-style: double;">
-
-                                    <div class="panel-heading">
-                                        <div class="box-header with-border">
-                                            <h1 class="box-title">Ficha de supervisión</h1>
-                                            <div class="box-tools pull-right">
-                                                <button class="btn btn-box-tool" data-widget="collapse">
-                                                    <i class="fa fa-minus"></i>
-                                                </button>
-                                                <button class="btn btn-box-tool" data-widget="remove">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
                                     <!-- centro -->
                                     <div class="panel-body">
                                         <div class="col-md-12">
@@ -568,7 +550,7 @@ if (!isset($_SESSION["nombre"])) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="modal-footer">
                                                     <button type="button" onclick="cancelarform()" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                                                     <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
                                                 </div>
@@ -576,7 +558,7 @@ if (!isset($_SESSION["nombre"])) {
                                         </div>
                                     </div>
 
-                                </div>
+                                
                             </div>
                         </div>
                     </form>
