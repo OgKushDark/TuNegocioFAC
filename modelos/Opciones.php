@@ -19,30 +19,30 @@ Class Opciones
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idcategoria,$nombre)
+	public function editar($idopciones,$nombre)
 	{
-		$sql="UPDATE categoria SET nombre='$nombre' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE opciones SET nombre='$nombre' WHERE idopciones='$idopciones'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para desactivar categorías
-	public function desactivar($idcategoria)
+	public function desactivar($idopciones)
 	{
-		$sql="UPDATE categoria SET condicion='0' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE opciones SET condicion='0' WHERE idopciones='$idopciones'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para activar categorías
-	public function activar($idcategoria)
+	public function activar($idopciones)
 	{
-		$sql="UPDATE categoria SET condicion='1' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE opciones SET condicion='1' WHERE idopciones='$idopciones'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementar un método para mostrar los datos de un registro a modificar
-	public function mostrar($idcategoria)
+	public function mostrar($idopciones)
 	{
-		$sql="SELECT * FROM categoria WHERE idcategoria='$idcategoria'";
+		$sql="SELECT * FROM opciones WHERE idopciones='$idopciones'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
@@ -52,12 +52,7 @@ Class Opciones
 		$sql="SELECT * FROM opciones";
 		return ejecutarConsulta($sql);		
 	}
-	//Implementar un método para listar los registros y mostrar en el select
-	public function select()
-	{
-		$sql="SELECT * FROM categoria where condicion=1";
-		return ejecutarConsulta($sql);		
-	}
+	
 }
 
 ?>

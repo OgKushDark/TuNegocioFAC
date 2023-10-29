@@ -295,15 +295,6 @@ if (empty($regn)) {
                 <li id="navSupervisionLi"><a href="ficha_supervision.php"><i class="fa fa-plus-circle"></i> Ficha de Supervisión</a></li>
               </ul>
 
-              
-              <ul class="treeview-menu">
-                <li id="navSupervisorLi"><a href="supervisor.php"><i class="fa fa-plus-circle"></i> Supervisor</a></li>
-              </ul>
-
-              <ul class="treeview-menu">
-                <li id="navSupervisionLi"><a href="proveedor.php"><i class="fa fa-plus-circle"></i> Reponsable</a></li>
-              </ul>
-
               <ul class="treeview-menu">
                 <li id="navZonaLi"><a href="zona.php"><i class="fa fa-plus-circle"></i> Zona</a></li>
               </ul>

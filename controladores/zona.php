@@ -13,25 +13,25 @@ switch ($_GET["op"]){
 			echo $rspta ? "Zona registrada" : "Zona no se pudo registrar";
 		}
 		else {
-			$rspta=$categoria->editar($idcategoria,$nombre);
-			echo $rspta ? "Categoría actualizada" : "Categoría no se pudo actualizar";
+			$rspta=$zona->editar($idzona,$nombre);
+			echo $rspta ? "Zona actualizada" : "Zona no se pudo actualizar";
 		}
 	break;
 
 	case 'desactivar':
-		$rspta=$categoria->desactivar($idcategoria);
- 		echo $rspta ? "Categoría Desactivada" : "Categoría no se puede desactivar";
+		$rspta=$zona->desactivar($idzona);
+ 		echo $rspta ? "Zona Desactivada" : "Zona no se puede desactivar";
  		break;
 	break;
 
 	case 'activar':
-		$rspta=$categoria->activar($idcategoria);
- 		echo $rspta ? "Categoría activada" : "Categoría no se puede activar";
+		$rspta=$zona->activar($idzona);
+ 		echo $rspta ? "Zona activada" : "Zona no se puede activar";
  		break;
 	break;
 
 	case 'mostrar':
-		$rspta=$categoria->mostrar($idcategoria);
+		$rspta=$zona->mostrar($idzona);
  		//Codificar el resultado utilizando json
  		echo json_encode($rspta);
  		break;

@@ -92,7 +92,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 </div>
               </div>
               <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">Tipo: </label>
+                <label for="tipo_opcion" class="col-sm-2 control-label">Tipo: </label>
                   <div class="col-sm-10">
                     <select class="form-control select-picker" name="tipo_opcion" id="tipo_opcion" required>
                       <option value="CONDICIÓN DE HIGIENE Y PREPARACION">CONDICIÓN DE HIGIENE Y PREPARACIÓN</option>

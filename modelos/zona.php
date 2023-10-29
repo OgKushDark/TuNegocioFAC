@@ -19,30 +19,30 @@ Class Zona
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idcategoria,$nombre)
+	public function editar($idzona,$nombre)
 	{
-		$sql="UPDATE categoria SET nombre='$nombre' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE zona SET nombre='$nombre' WHERE idzona='$idzona'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para desactivar categorías
-	public function desactivar($idcategoria)
+	public function desactivar($idzona)
 	{
-		$sql="UPDATE categoria SET condicion='0' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE zona SET condicion='0' WHERE idzona='$idzona'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para activar categorías
-	public function activar($idcategoria)
+	public function activar($idzona)
 	{
-		$sql="UPDATE categoria SET condicion='1' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE zona SET condicion='1' WHERE idzona='$idzona'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementar un método para mostrar los datos de un registro a modificar
-	public function mostrar($idcategoria)
+	public function mostrar($idzona)
 	{
-		$sql="SELECT * FROM categoria WHERE idcategoria='$idcategoria'";
+		$sql="SELECT * FROM zona WHERE idzona='$idzona'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
@@ -55,7 +55,7 @@ Class Zona
 	//Implementar un método para listar los registros y mostrar en el select
 	public function select()
 	{
-		$sql="SELECT * FROM categoria where condicion=1";
+		$sql="SELECT * FROM zona where condicion=1";
 		return ejecutarConsulta($sql);		
 	}
 }

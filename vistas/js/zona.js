@@ -114,25 +114,25 @@ function guardaryeditar(e)
 	//location.reload();
 }
 
-function mostrar(idcategoria)
+function mostrar(idzona)
 {
-	$.post("../controladores/categoria.php?op=mostrar",{idcategoria : idcategoria}, function(data, status)
+	$.post("../controladores/zona.php?op=mostrar",{idzona : idzona}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
 		$("#nombre").val(data.nombre);
- 		$("#idcategoria").val(data.idcategoria);
+ 		$("#idzona").val(data.idzona);
 
  	})
 }
 
 //Función para desactivar registros
-function desactivar(idcategoria)
+function desactivar(idzona)
 {
 	swal({
 						    title: "¿Desactivar?",
-						    text: "¿Está seguro Que Desea Desactivar la Categoria?",
+						    text: "¿Está seguro Que Desea Desactivar la Zona?",
 						    type: "warning",
 						    showCancelButton: true,
 								cancelButtonText: "No",
@@ -144,23 +144,23 @@ function desactivar(idcategoria)
 						    showLoaderOnConfirm: true
 						    },function(isConfirm){
 						    if (isConfirm){
-									$.post("../controladores/categoria.php?op=desactivar", {idcategoria : idcategoria}, function(e){
+									$.post("../controladores/zona.php?op=desactivar", {idzona : idzona}, function(e){
 										swal(
 											'!!! Desactivada !!!',e,'success')
 					            tabla.ajax.reload();
 				        	});
 						    }else {
-						    swal("! Cancelado ¡", "Se Cancelo la desactivacion de la Categoria", "error");
+						    swal("! Cancelado ¡", "Se Cancelo la desactivacion de la Zona", "error");
 							 }
 							});
 }
 
 //Función para activar registros
-function activar(idcategoria)
+function activar(idzona)
 {
 	swal({
 		    title: "¿Activar?",
-		    text: "¿Está seguro Que desea Activar la Categoria?",
+		    text: "¿Está seguro Que desea Activar la Zona?",
 		    type: "warning",
 		    showCancelButton: true,
 				confirmButtonColor: '#0004FA',
@@ -172,7 +172,7 @@ function activar(idcategoria)
 		    showLoaderOnConfirm: true
 		    },function(isConfirm){
 		    if (isConfirm){
-						$.post("../controladores/categoria.php?op=activar", {idcategoria : idcategoria}, function(e){
+						$.post("../controladores/zona.php?op=activar", {idzona : idzona}, function(e){
 						swal("!!! Activada !!!", e ,"success");
 								tabla.ajax.reload();
 						});

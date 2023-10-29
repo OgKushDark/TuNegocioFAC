@@ -11,7 +11,7 @@ function init(){
 	});
 	
     $('#navSupervision').addClass("treeview active");
-    $('#navOpciones').addClass("active");
+    $('#navOpcionesLi').addClass("active");
 
 }
 
@@ -20,6 +20,8 @@ function limpiar()
 {
 	$("#nombre").val("");
 	$("#idopciones").val("");
+	$("#tipo_opcion").selectpicker('refresh');
+	
 }
 
 //Función mostrar formulario
@@ -113,25 +115,28 @@ function guardaryeditar(e)
 	//location.reload();
 }
 
-function mostrar(idcategoria)
+function mostrar(idopciones)
 {
-	$.post("../controladores/categoria.php?op=mostrar",{idcategoria : idcategoria}, function(data, status)
+	$.post("../controladores/opciones.php?op=mostrar",{idopciones : idopciones}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
 		$("#nombre").val(data.nombre);
- 		$("#idcategoria").val(data.idcategoria);
+ 		$("#idopciones").val(data.idopciones);
+ 		$("#tipo_opcion").val(data.tipo);
+ 		$('#tipo_opcion').selectpicker('refresh');
+
 
  	})
 }
 
 //Función para desactivar registros
-function desactivar(idcategoria)
+function desactivar(idopciones)
 {
 	swal({
 						    title: "¿Desactivar?",
-						    text: "¿Está seguro Que Desea Desactivar la Categoria?",
+						    text: "¿Está seguro Que Desea Desactivar las Opciones?",
 						    type: "warning",
 						    showCancelButton: true,
 								cancelButtonText: "No",
@@ -143,23 +148,23 @@ function desactivar(idcategoria)
 						    showLoaderOnConfirm: true
 						    },function(isConfirm){
 						    if (isConfirm){
-									$.post("../controladores/categoria.php?op=desactivar", {idcategoria : idcategoria}, function(e){
+									$.post("../controladores/opciones.php?op=desactivar", {idopciones : idopciones}, function(e){
 										swal(
 											'!!! Desactivada !!!',e,'success')
 					            tabla.ajax.reload();
 				        	});
 						    }else {
-						    swal("! Cancelado ¡", "Se Cancelo la desactivacion de la Categoria", "error");
+						    swal("! Cancelado ¡", "Se Cancelo la desactivacion de las opciones", "error");
 							 }
 							});
 }
 
 //Función para activar registros
-function activar(idcategoria)
+function activar(idopciones)
 {
 	swal({
 		    title: "¿Activar?",
-		    text: "¿Está seguro Que desea Activar la Categoria?",
+		    text: "¿Está seguro Que desea Activar la Opción?",
 		    type: "warning",
 		    showCancelButton: true,
 				confirmButtonColor: '#0004FA',
@@ -171,12 +176,12 @@ function activar(idcategoria)
 		    showLoaderOnConfirm: true
 		    },function(isConfirm){
 		    if (isConfirm){
-						$.post("../controladores/categoria.php?op=activar", {idcategoria : idcategoria}, function(e){
+						$.post("../controladores/opciones.php?op=activar", {idopciones : idopciones}, function(e){
 						swal("!!! Activada !!!", e ,"success");
 								tabla.ajax.reload();
 						});
 		    }else {
-		    swal("! Cancelado ¡", "Se Cancelo la activacion de la Categoria", "error");
+		    swal("! Cancelado ¡", "Se Cancelo la activacion de la Opción", "error");
 			 }
 			});
 }
