@@ -194,92 +194,37 @@ if (empty($regn)) {
 
           <?php
           if ($_SESSION['almacen'] == 1) {
-            echo '<li class="treeview" id="navAlmacen">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Almacén</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu" id="navAlmacen">
-                <li id="navProducto"><a href="producto.php" id="navProducto"><i class="fa fa-plus-circle"></i> Productos</a></li>
-                <li id="navCategoria"><a href="categoria.php"><i class="fa fa-plus-circle"></i> Categorías</a></li>
-                <li id="navUnidadMedida"><a href="unidadmedida.php"><i class="fa fa-plus-circle"></i> Unidad de Medida</a></li>
-                <li id="navmarca"><a href="marca.php"><i class="fa fa-plus-circle"></i> Marca </a></li>
-              </ul>
-            </li>';
+           
           }
           ?>
 
           <?php
           if ($_SESSION['compras'] == 1) {
-            echo '<li class="treeview" id="navCompras">
-              <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Compras</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="navCompra"><a href="compra.php"><i class="fa fa-plus-circle"></i> Compras</a></li>
-                <li id="navProveedor"><a href="proveedor.php"><i class="fa fa-plus-circle"></i> Proveedores</a></li>
-              </ul>
-            </li>';
+            
           }
           ?>
 
           <?php
           if ($_SESSION['ventas'] == 1) {
-            echo '<li class="treeview" id="navCajaChica">
-              <a href="cajachica.php">
-                <i class="fa fa-usd"></i>
-                <span>Caja Chica</span>
-              </a>
-            </li>';
+            
           }
           ?>
 
           <?php
           if ($_SESSION['ventas'] == 1) {
-            echo '<li class="treeview" id="navCuentasPorCobrar">
-              <a href="cuentasxcobrar.php">
-                <i class="fa fa-list-ul"></i>
-                <span>Cuentas por Cobrar</span>
-              </a>
-            </li>';
+            
           }
           ?>
 
           <?php
           if ($_SESSION['ventas'] == 1) {
-            echo '<li class="treeview" id="navVentasV">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Ventas</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="navCotizacionesLi"><a href="cotizaciones.php"><i class="fa fa-plus-circle"></i> Cotizaciones</a></li>
-                <li id="navVentasLi"><a href="venta.php"><i class="fa fa-plus-circle"></i> Ventas</a></li>
-                <li id="navNCreditosLi"><a href="notascredito.php"><i class="fa fa-plus-circle"></i> Notas de Crédito</a></li>
-                <li id="navClientesLi"><a href="cliente.php"><i class="fa fa-plus-circle"></i> Clientes</a></li>
-              </ul>
-            </li>';
+           
           }
           ?>
 
           <?php
           if ($_SESSION['personal'] == 1) {
-            echo '<li class="treeview" id="navPersonal">
-              <a href="#">
-                <i class="fa fa-user"></i> <span>Personal</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="navPersonalLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i> Personal</a></li>
-                <li id="navUsuarioLi"><a href="usuario.php"><i class="fa fa-plus-circle"></i> Usuarios</a></li>
-                <li id="navPermisoLi"><a href="permiso.php"><i class="fa fa-plus-circle"></i> Permisos</a></li>
-                
-              </ul>
-            </li>';
+            
           }
           ?>
 
@@ -314,51 +259,19 @@ if (empty($regn)) {
 
           <?php
           if ($_SESSION['configuracion'] == 1) {
-            echo '<li class="treeview" id="navConfiguracion">
-              <a href="#">
-                <i class="fa fa-cog"></i> <span>Configuracion</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-
-                <li id="navConfiguracionLi"><a href="negocio.php"><i class="fa fa-circle-o"></i> Datos Generales</a></li>
-                
-              </ul>
-            </li>';
+            
           }
           ?>
 
           <?php
           if ($_SESSION['consultac'] == 1) {
-            echo '<li class="treeview" id="navConsultaC">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i> <span>Consulta Compras</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="navConsultaCLi"><a href="comprasfecha.php"><i class="fa fa-plus-circle"></i> Consulta Compras</a></li>                
-              </ul>
-            </li>';
+            
           }
           ?>
 
           <?php
           if ($_SESSION['consultav'] == 1) {
-            echo '<li class="treeview" id="navConsultaV">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i> <span>Consulta Ventas</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="navConsultaVLi"><a href="ventasfechacliente.php"><i class="fa fa-plus-circle"></i> Consulta Ventas x Cliente</a></li>                
-              </ul>
-              <ul class="treeview-menu">
-                <li id="navConsultaVentasVLi"><a href="ventasfechavendedor.php"><i class="fa fa-plus-circle"></i> Consulta Ventas x Vendedor</a></li>                
-              </ul>
-              <ul class="treeview-menu">
-                <li id="navConsultaProductoVLi"><a href="ventasfechaproducto.php"><i class="fa fa-plus-circle"></i> Consulta Ventas x Producto</a></li>                
-              </ul>
-            </li>';
+            
           }
           ?>
 
