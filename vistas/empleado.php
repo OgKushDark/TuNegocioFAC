@@ -28,7 +28,7 @@ if (!isset($_SESSION["idpersonal"])) {
         <div class="panel panel-default" style="border-color: #666; border-width: 3px; border-style: double;">
           <div class="panel-heading">
             <div class="box-header with-border">
-              <h1 class="box-title">Personal</h1>
+              <h1 class="box-title">Supervisor</h1>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse">
                   <i class="fa fa-minus"></i>
@@ -88,16 +88,16 @@ if (!isset($_SESSION["idpersonal"])) {
             <div class="modal-header" style="background:#3c8dbc; color:white">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title">
-                Personal</h4>
+                Supervisor</h4>
             </div>
 
             <div class="modal-body">
 
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Nombre:</label>
-                <div class="col-sm-6">
+                <div class="col-sm-10">
                   <input type="hidden" name="idpersonal" id="idpersonal">
-                  <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
+                  <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre y Apellidos" required>
                 </div>
 
               </div>
@@ -120,31 +120,30 @@ if (!isset($_SESSION["idpersonal"])) {
                 </div>
               </div>
 
+                        
+              <!-- Zona -->
               <div class="form-group">
 
-                <label for="name" class="col-sm-2 control-label">Dirección: </label>
-                <div class="col-sm-4">
-                  <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección" maxlength="70">
-                </div>
-                <label for="name" class="col-sm-2 control-label">Teléfono:</label>
-                <div class="col-sm-4">
-                  <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">
-                </div>
+                <label for="idzona1" class="col-sm-2 control-label">Zona 01: </label>
+                  <div class="col-sm-4">
+                    <select id="idzona1" name="idzona1" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 01" required></select>
+                  </div>
+
+                <label for="idzona2" class="col-sm-2 control-label">Zona 02: </label>
+                  <div class="col-sm-4">
+                    <select id="idzona2" name="idzona2" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 02" required></select>
+                  </div>
               </div>
 
               <div class="form-group">
 
-                <label for="name" class="col-sm-2 control-label">Email: </label>
-                <div class="col-sm-4">
-                  <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email">
-                </div>
-
-                <label for="name" class="col-sm-2 control-label">Cargo:</label>
-                <div class="col-sm-4">
-                  <input type="text" class="form-control" name="cargo" id="cargo" maxlength="20" placeholder="Cargo">
-                </div>
+                <label for="idzona3" class="col-sm-2 control-label">Zona 03: </label>
+                  <div class="col-sm-4">
+                    <select id="idzona3" name="idzona3" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 03" required></select>
+                  </div>
+                
               </div>
-
+              <!-- Zona -->
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Imagen:</label>
                 <div class="col-sm-6">

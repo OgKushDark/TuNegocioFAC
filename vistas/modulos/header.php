@@ -224,7 +224,28 @@ if (empty($regn)) {
 
           <?php
           if ($_SESSION['personal'] == 1) {
-            
+             echo '<li class="treeview" id="navSupervision">
+              <a href="#">
+                <i class="fa fa-user"></i> <span>Personal</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="navSupervisionLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Empelado</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navZonaLi"><a href="usuario.php"><i class="fa fa-plus-circle"></i>Usuario</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navOpcionesLi"><a href="opciones.php"><i class="fa fa-plus-circle"></i> Opciones</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li id="navComiteLi"><a href="comite.php"><i class="fa fa-plus-circle"></i> Comite</a></li>
+              </ul>
+
+            </li>';
           }
           ?>
 

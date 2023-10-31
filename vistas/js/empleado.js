@@ -19,15 +19,24 @@ function init(){
     
 }
 
+$.post("../controladores/comite.php?op=selectZona", function(r){
+
+	    $("#idzona1").html(r);
+	    $('#idzona1').selectpicker('refresh');
+
+	    $("#idzona2").html(r);
+	    $('#idzona2').selectpicker('refresh');
+
+	    $("#idzona3").html(r);
+	    $('#idzona3').selectpicker('refresh');
+
+	});
+
 //Función limpiar
 function limpiar()
 {
 	$("#nombre").val("");
 	$("#num_documento").val("");
-	$("#direccion").val("");
-	$("#telefono").val("");
-	$("#email").val("");
-	$("#cargo").val("");
 	$("#imagenmuestra").attr("src","../files//personal/user.png");
 	$("#imagenactual").val("user.png");
 	$("#idpersonal").val("");
@@ -130,10 +139,6 @@ function mostrar(idpersonal)
 		$("#tipo_documento").val(data.tipo_documento);
 		$("#tipo_documento").selectpicker('refresh');
 		$("#num_documento").val(data.num_documento);
-		$("#direccion").val(data.direccion);
-		$("#telefono").val(data.telefono);
-		$("#email").val(data.email);
-		$("#cargo").val(data.cargo);
 		$("#imagenmuestra").show();
 		$("#imagenmuestra").attr("src","../files/personal/"+data.imagen);
 		$("#imagenactual").val(data.imagen);
