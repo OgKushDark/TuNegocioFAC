@@ -18,6 +18,13 @@ Class Comite
 		return ejecutarConsulta($sql);
 	}
 
+	public function insertarB($beneficiario, $DNI,$edad, $responsable,$DNIr,$idcomites)
+	{
+		$sql="INSERT INTO beneficiario (nombre,DNI,edad, responsable,DNIr, idcomite,condicion)
+		VALUES ('$beneficiario', '$DNI','$edad', '$responsable','$DNIr','$idcomites','1')";
+		return ejecutarConsulta($sql);
+	}
+
 	//Implementamos un método para editar registros
 	public function editar($idcomite,$nombre,$direccion,$responsable,$DNI,$dirresponsable,$cocinero,	$idzona)
 	{
@@ -45,6 +52,12 @@ Class Comite
 	public function mostrar($idcomite)
 	{
 		$sql="SELECT * FROM comite WHERE idcomite='$idcomite'";
+		return ejecutarConsultaSimpleFila($sql);
+	}
+
+	public function beneficiario($idcomite)
+	{
+		$sql="SELECT idcomite, nombre FROM comite WHERE idcomite='$idcomite'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 

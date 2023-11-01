@@ -3,11 +3,17 @@ var tabla;
 //Función que se ejecuta al inicio
 function init(){
 	mostrarform(false);
+	mostrarformB(false);
 	listar();
 
 	$("#myModal").on("submit",function(e)
 	{
 		guardaryeditar(e);	
+	});
+
+	$("#myModalB").on("submit",function(e)
+	{
+		guardarB(e);	
 	});
 	
     $('#navSupervision').addClass("treeview active");
@@ -53,11 +59,28 @@ function mostrarform(flag)
 	}
 }
 
+//Función mostrar formularioBeneficiario
+function mostrarformB(flag)
+{
+	limpiar();
+	if (flag)
+	{
+		$("#listadoregistros").show();
+		$('#myModalB').modal('show');
+	}
+	else
+	{
+		$("#listadoregistros").show();
+		$("#btnagregarB").show();
+	}
+}
+
 //Función cancelarform
 function cancelarform()
 {
 	limpiar();
 	mostrarform(false);
+	mostrarformB(false);
 }
 
 //Función Listar
@@ -128,6 +151,39 @@ function guardaryeditar(e)
 	//location.reload();
 }
 
+function guardarB(e)
+{
+	e.preventDefault(); //No se activará la acción predeterminada del evento
+	//$("#btnGuardar").prop("disabled",true);
+	var formData = new FormData($("#formularioB")[0]);
+
+	$.ajax({
+		url: "../controladores/comite.php?op=guardarB",
+	    type: "POST",
+	    data: formData,
+	    contentType: false,
+	    processData: false,
+
+	    success: function(datos)
+	    {                    
+	          swal({
+				  title: 'Beneficiario',
+				  type: 'success',
+					text:datos
+				});
+              $('#myModalB').modal('hide');
+              	          
+	          mostrarformB(false);
+	          tabla.ajax.reload();
+
+
+	    }
+
+	});
+	limpiar();
+	//location.reload();
+}
+
 function mostrar(idcomite)
 {
 	$.post("../controladores/comite.php?op=mostrar",{idcomite : idcomite}, function(data, status)
@@ -144,6 +200,19 @@ function mostrar(idcomite)
 		$("#cocinero").val(data.cocinero);
 		$("#idzona").val(data.idzona);
 		$('#idzona').selectpicker('refresh');
+
+ 	})
+}
+
+function beneficiario(idcomite)
+{
+	$.post("../controladores/comite.php?op=beneficiario",{idcomite : idcomite}, function(data, status)
+	{
+		data = JSON.parse(data);		
+		mostrarformB(true);
+
+		$("#nombres").val(data.nombre);
+ 		$("#idcomites").val(data.idcomite);
 
  	})
 }

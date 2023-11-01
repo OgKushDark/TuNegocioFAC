@@ -58,6 +58,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <th>Zona</th>
                 <th>Estado</th>
                 <th>Acciones</th>
+                <th>Beneficiario</th>
               </thead>
               <tbody>
               </tbody>
@@ -71,6 +72,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <th>Zona</th>
                 <th>Estado</th>
                 <th>Acciones</th>
+                <th>Beneficario</th>
               </tfoot>
             </table>
           </div>
@@ -154,6 +156,79 @@ if (!isset($_SESSION["idpersonal"])) {
       </div>
     </div>
     <!-- Fin modal -->
+
+
+    <!-- Modal Beneficiario -->
+    <div class="modal fade" id="myModalB" tabindex="-1" role="dialog">
+
+      <div class="modal-dialog" style="width: 480px">
+
+        <div class="modal-content">
+          <!-- form -->
+          <form class="form-horizontal" role="form" name="formularioB" id="formularioB" method="POST">
+
+            <div class="modal-header" style="background:#3c8dbc; color:white">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">
+                Beneficiario</h4>
+            </div>
+
+            <div class="modal-body">
+                          
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Comite:</label>
+                <div class="col-sm-10">
+                  <input type="hidden" name="idcomites" id="idcomites">
+                  <input type="text" class="form-control" name="nombres" id="nombres" maxlength="500" placeholder="comite" required>
+                </div>
+              </div>
+              
+            
+              <div class="form-group">
+                <label for="beneficiario" class="col-sm-2 control-label">Beneficiario:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="beneficiario" id="beneficiario" maxlength="500" placeholder="beneficiario" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="DNI" class="col-sm-2 control-label">DNI:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="DNI" id="DNI" maxlength="8" placeholder="DNI" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="edad" class="col-sm-2 control-label">Edad:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="edad" id="edad" maxlength="8" placeholder="Edad" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="responsable" class="col-sm-2 control-label">Reponsable:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="responsable" id="responsable" maxlength="500" placeholder="responsable" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="DNIr" class="col-sm-2 control-label">DNI:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="DNIr" id="DNIr" maxlength="8" placeholder="DNI Responsable" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" onclick="cancelarform()" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+              <button class="btn btn-primary" type="submit" id="btnGuardarB"><i class="fa fa-save"></i> Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Fin modal -->
+
   <?php
   } else {
     require 'noacceso.php';
