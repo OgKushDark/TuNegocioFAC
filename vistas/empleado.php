@@ -51,8 +51,6 @@ if (!isset($_SESSION["idpersonal"])) {
                 <th>Nombre</th>
                 <th>Documento</th>
                 <th>Número</th>
-                <th>Teléfono</th>
-                <th>Email</th>
                 <th>Foto</th>
                 <th>Estado</th>
                 <th>Acciones</th>
@@ -63,8 +61,6 @@ if (!isset($_SESSION["idpersonal"])) {
                 <th>Nombre</th>
                 <th>Documento</th>
                 <th>Número</th>
-                <th>Teléfono</th>
-                <th>Email</th>
                 <th>Foto</th>
                 <th>Estado</th>
                 <th>Acciones</th>

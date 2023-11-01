@@ -11,6 +11,9 @@ $direccion=isset($_POST["direccion"])? limpiarCadena($_POST["direccion"]):"";
 $telefono=isset($_POST["telefono"])? limpiarCadena($_POST["telefono"]):"";
 $email=isset($_POST["email"])? limpiarCadena($_POST["email"]):"";
 $cargo=isset($_POST["cargo"])? limpiarCadena($_POST["cargo"]):"";
+$idzona1=isset($_POST["idzona1"])? limpiarCadena($_POST["idzona1"]):"";
+$idzona2=isset($_POST["idzona2"])? limpiarCadena($_POST["idzona2"]):"";
+$idzona3=isset($_POST["idzona3"])? limpiarCadena($_POST["idzona3"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
 
 switch ($_GET["op"]){
@@ -30,11 +33,11 @@ switch ($_GET["op"]){
 			}
 		}
 		if (empty($idpersonal)){
-			$rspta=$empleado->insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$imagen);
+			$rspta=$empleado->insertar($nombre,$tipo_documento,$num_documento,$idzona1,$idzona2,$idzona3,$imagen);
 			echo $rspta ? "Empleado registrado" : "Empleado no se pudo registrar";
 		}
 		else {
-			$rspta=$empleado->editar($idpersonal,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$imagen);
+			$rspta=$empleado->editar($idpersonal,$nombre,$tipo_documento,$num_documento,$idzona1,$idzona2,$idzona3,$imagen);
 			echo $rspta ? "Empleado actualizado" : "Empleado no se pudo actualizar";
 		}
 	break;
@@ -66,12 +69,10 @@ switch ($_GET["op"]){
 		 				"0"=>$reg->nombre,
 		 				"1"=>$reg->tipo_documento,
 		 				"2"=>$reg->num_documento,
-		 				"3"=>$reg->telefono,
-		 				"4"=>$reg->email,
-		 				"5"=>"<img src='../files/personal/".$reg->imagen."' height='50px' width='50px' >",
-		 				"6"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
+		 				"3"=>"<img src='../files/personal/".$reg->imagen."' height='50px' width='50px' >",
+		 				"4"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
 		 				'<span class="badge bg-red">DESACTIVADO</span>',
-		 				"7"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idpersonal.')"><i class="fa fa-pencil"></i></button>'.
+		 				"5"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idpersonal.')"><i class="fa fa-pencil"></i></button>'.
 		 					' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idpersonal.')"><i class="fa fa-close"></i></button>':
 		 					'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idpersonal.')"><i class="fa fa-pencil"></i></button>'.
 		 					' <button class="btn btn-primary btn-xs" onclick="activar('.$reg->idpersonal.')"><i class="fa fa-check"></i></button>'

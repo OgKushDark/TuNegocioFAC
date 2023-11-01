@@ -11,17 +11,17 @@ Class Empleado
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$imagen)
+	public function insertar($nombre,$tipo_documento,$num_documento,$idzona1,$idzona2,$idzona3,$imagen)
 	{
-		$sql="INSERT INTO personal (nombre,tipo_documento,num_documento,direccion,telefono,email,cargo,imagen,condicion)
-		VALUES ('$nombre','$tipo_documento','$num_documento','$direccion','$telefono','$email','$cargo','$imagen','1')";
+		$sql="INSERT INTO personal (nombre,tipo_documento,num_documento,idzona1,idzona2,idzona3,imagen,condicion)
+		VALUES ('$nombre','$tipo_documento','$num_documento','$idzona1','$idzona2','$idzona3','$imagen','1')";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idpersonal,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$imagen)
+	public function editar($idpersonal,$nombre,$tipo_documento,$num_documento,$idzona1,$idzona2,$idzona3,$imagen)
 	{
-		$sql="UPDATE personal SET nombre='$nombre',tipo_documento='$tipo_documento',num_documento='$num_documento',direccion='$direccion',telefono='$telefono',email='$email',cargo='$cargo',imagen='$imagen' WHERE idpersonal='$idpersonal'";
+		$sql="UPDATE personal SET nombre='$nombre',tipo_documento='$tipo_documento',num_documento='$num_documento',idzona1='$idzona1',idzona2='$idzona2',idzona3='$idzona3',imagen='$imagen' WHERE idpersonal='$idpersonal'";
 		return ejecutarConsulta($sql);
 	}
 
