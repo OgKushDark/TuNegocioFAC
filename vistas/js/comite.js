@@ -16,7 +16,7 @@ function init(){
 		guardarB(e);	
 	});
 	
-    $('#navSupervision').addClass("treeview active");
+    $('#navConfiguracion').addClass("treeview active");
     $('#navComiteLi').addClass("active");
 
 }

@@ -10,7 +10,7 @@ function init(){
 		guardaryeditar(e);	
 	});
 	
-    $('#navSupervision').addClass("treeview active");
+    $('#navConfiguracion').addClass("treeview active");
     $('#navOpcionesLi').addClass("active");
 
 }

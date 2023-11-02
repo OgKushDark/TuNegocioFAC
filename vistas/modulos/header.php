@@ -199,12 +199,6 @@ if (empty($regn)) {
           ?>
 
           <?php
-          if ($_SESSION['compras'] == 1) {
-            
-          }
-          ?>
-
-          <?php
           if ($_SESSION['ventas'] == 1) {
             
           }
@@ -224,25 +218,18 @@ if (empty($regn)) {
 
           <?php
           if ($_SESSION['personal'] == 1) {
-             echo '<li class="treeview" id="navSupervision">
+
+            echo '<li class="treeview" id="navSupervision">
               <a href="#">
                 <i class="fa fa-user"></i> <span>Personal</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="navSupervisionLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Empelado</a></li>
+                <li id="navSupervisionLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Empleado</a></li>
               </ul>
 
               <ul class="treeview-menu">
                 <li id="navZonaLi"><a href="usuario.php"><i class="fa fa-plus-circle"></i>Usuario</a></li>
-              </ul>
-
-              <ul class="treeview-menu">
-                <li id="navOpcionesLi"><a href="opciones.php"><i class="fa fa-plus-circle"></i> Opciones</a></li>
-              </ul>
-
-              <ul class="treeview-menu">
-                <li id="navComiteLi"><a href="comite.php"><i class="fa fa-plus-circle"></i> Comite</a></li>
               </ul>
 
             </li>';
@@ -251,7 +238,7 @@ if (empty($regn)) {
 
           <!-- NUEVA OPCION PARA SUPERVISION -->
           <?php
-          if ($_SESSION['inicio'] == 1) {
+          if ($_SESSION['Supervisor'] == 1) {
             echo '<li class="treeview" id="navSupervision">
               <a href="#">
                 <i class="fa fa-user"></i> <span>Ficha de Supervisión</span>
@@ -259,6 +246,27 @@ if (empty($regn)) {
               </a>
               <ul class="treeview-menu">
                 <li id="navSupervisionLi"><a href="ficha_supervision.php"><i class="fa fa-plus-circle"></i> Ficha de Supervisión</a></li>
+              </ul>
+
+             
+
+            </li>';
+          }
+          ?>
+          <!-- fin NUEEVA OPCION PARA SUPERVISION -->
+
+
+
+          <?php
+          if ($_SESSION['configuracion'] == 1) {
+            echo '<li class="treeview" id="navConfiguracion">
+              <a href="#">
+                <i class="fa fa-cog"></i> <span>Configuracion</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+
+                <li id="navConfiguracionLi"><a href="negocio.php"><i class="fa fa-circle-o"></i> Datos Generales</a></li>
               </ul>
 
               <ul class="treeview-menu">
@@ -273,14 +281,10 @@ if (empty($regn)) {
                 <li id="navComiteLi"><a href="comite.php"><i class="fa fa-plus-circle"></i> Comite</a></li>
               </ul>
 
-            </li>';
-          }
-          ?>
-          <!-- fin NUEEVA OPCION PARA SUPERVISION -->
 
-          <?php
-          if ($_SESSION['configuracion'] == 1) {
-            
+                
+              
+            </li>';
           }
           ?>
 
