@@ -11,10 +11,10 @@ Class Comite
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($nombre,$direccion,$responsable,$DNI,$dirresponsable,$cocinero,$idzona)
+	public function insertar($nombre,$direccion,$responsable,$DNI,$dirresponsable,$cocinero, $DNIc,$idzona)
 	{
-		$sql="INSERT INTO comite (nombre,direccion, responsable,DNI, dirresponsable, cocinero,idzona,condicion)
-		VALUES ('$nombre','$direccion','$responsable','$DNI','$dirresponsable','$cocinero','$idzona','1')";
+		$sql="INSERT INTO comite (nombre,direccion, responsable,DNI, dirresponsable, cocinero,DNIc, idzona,condicion)
+		VALUES ('$nombre','$direccion','$responsable','$DNI','$dirresponsable','$cocinero','$DNIc','$idzona','1')";
 		return ejecutarConsulta($sql);
 	}
 
@@ -26,10 +26,10 @@ Class Comite
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idcomite,$nombre,$direccion,$responsable,$DNI,$dirresponsable,$cocinero,	$idzona)
+	public function editar($idcomite,$nombre,$direccion,$responsable,$DNI,$dirresponsable,$cocinero, $DNIc,	$idzona)
 	{
 		$sql="UPDATE comite SET nombre='$nombre', direccion='$direccion',responsable='$responsable', 
-								DNI ='$DNI',dirresponsable='$dirresponsable',cocinero='$cocinero',idzona='$idzona'
+								DNI ='$DNI',dirresponsable='$dirresponsable',cocinero='$cocinero',DNIc='$DNIc', idzona='$idzona'
 		WHERE idcomite='$idcomite'";
 		return ejecutarConsulta($sql);
 	}

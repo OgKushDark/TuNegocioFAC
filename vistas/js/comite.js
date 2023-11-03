@@ -200,6 +200,7 @@ function mostrar(idcomite)
 		$("#DNIc").val(data.DNIc);
 		$("#dirresponsable").val(data.dirresponsable);
 		$("#cocinero").val(data.cocinero);
+		$("#DNIc").val(data.DNIc);
 		$("#idzona").val(data.idzona);
 		$('#idzona').selectpicker('refresh');
 
