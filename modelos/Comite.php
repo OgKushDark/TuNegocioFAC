@@ -18,10 +18,10 @@ Class Comite
 		return ejecutarConsulta($sql);
 	}
 
-	public function insertarB($beneficiario, $DNI,$edad, $responsable,$DNIr,$idcomites)
+	public function insertarB($beneficiario, $DNI,$edad, $tipo , $responsable,$DNIr,$idcomites)
 	{
-		$sql="INSERT INTO beneficiario (nombre,DNI,edad, responsable,DNIr, idcomite,condicion)
-		VALUES ('$beneficiario', '$DNI','$edad', '$responsable','$DNIr','$idcomites','1')";
+		$sql="INSERT INTO beneficiario (nombre,DNI, edad, tipo, responsable,DNIr, idcomite,condicion)
+		VALUES ('$beneficiario', '$DNI','$edad','$tipo', '$responsable','$DNIr','$idcomites','1')";
 		return ejecutarConsulta($sql);
 	}
 
@@ -64,7 +64,7 @@ Class Comite
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT c.idcomite, c.nombre, c.direccion, c.responsable, c.DNI, c.dirresponsable, 			 c.cocinero, z.nombre as Zona, c.condicion
+		$sql="SELECT c.idcomite, c.nombre, c.direccion, c.responsable, c.DNI, c.dirresponsable,  c.cocinero,c.DNIc, z.nombre as Zona, c.condicion
  					 FROM comite c
  					 inner join zona z on z.idzona = c.idzona";
 		return ejecutarConsulta($sql);		

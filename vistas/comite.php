@@ -55,6 +55,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <th>DNI</th>
                 <th>Dir. Responsable</th>
                 <th>Cocinero</th>
+                <th>DNI Cocinero</th>
                 <th>Zona</th>
                 <th>Estado</th>
                 <th>Acciones</th>
@@ -69,6 +70,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <th>DNI</th>
                 <th>Dir. Responsable</th>
                 <th>Cocinero</th>
+                <th>DNI Cocinero</th>
                 <th>Zona</th>
                 <th>Estado</th>
                 <th>Acciones</th>
@@ -139,6 +141,14 @@ if (!isset($_SESSION["idpersonal"])) {
                   <input type="text" class="form-control" name="cocinero" id="cocinero" maxlength="500" placeholder="cocinero" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label for="DNIc" class="col-sm-2 control-label">DNI:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="DNIc" id="DNIc" maxlength="8" placeholder="DNI Cocinero" required>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label for="idzona" class="col-sm-2 control-label">Zona: </label>
                   <div class="col-sm-10">
@@ -203,6 +213,17 @@ if (!isset($_SESSION["idpersonal"])) {
                 <div class="col-sm-10">
                   <input type="text" class="form-control" name="edad" id="edad" maxlength="8" placeholder="Edad" required>
                 </div>
+              </div>
+
+              <div class="form-group">
+                <label for="tipo_opcion" class="col-sm-2 control-label">Tipo: </label>
+                  <div class="col-sm-10">
+                    <select class="form-control select-picker" name="tipo_opcion" id="tipo_opcion" required>
+                      <option value="Primera Prioridad">Primera Prioridad</option>
+                      <option value="Segunda Prioridad">Segunda Prioridad</option>
+                      <option value="Tercera Prioridad">Tercera Prioridad</option>
+                    </select>
+                  </div>
               </div>
 
               <div class="form-group">

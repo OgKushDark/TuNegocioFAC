@@ -35,6 +35,7 @@ function limpiar()
 	$("#direccion").val("");
 	$("#responsable").val("");
 	$("#DNI").val("");
+	$("#DNIc").val("");
 	$("#dirresponsable").val("");
 	$("#cocinero").val("");
 	$("#idzona").val("");
@@ -196,6 +197,7 @@ function mostrar(idcomite)
 		$("#direccion").val(data.direccion);
 		$("#responsable").val(data.responsable);
 		$("#DNI").val(data.DNI);
+		$("#DNIc").val(data.DNIc);
 		$("#dirresponsable").val(data.dirresponsable);
 		$("#cocinero").val(data.cocinero);
 		$("#idzona").val(data.idzona);

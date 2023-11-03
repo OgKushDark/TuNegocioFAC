@@ -225,7 +225,7 @@ if (empty($regn)) {
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="navSupervisionLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Empleado</a></li>
+                <li id="navSupervisionLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Supervisor</a></li>
               </ul>
 
               <ul class="treeview-menu">

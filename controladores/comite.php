@@ -14,15 +14,17 @@ $cocinero=isset($_POST["cocinero"])? limpiarCadena($_POST["cocinero"]):"";
 $idzona=isset($_POST["idzona"])? limpiarCadena($_POST["idzona"]):"";
 $edad=isset($_POST["edad"])? limpiarCadena($_POST["edad"]):"";
 $DNIr=isset($_POST["DNIr"])? limpiarCadena($_POST["DNIr"]):"";
+$DNIc=isset($_POST["DNIc"])? limpiarCadena($_POST["DNIc"]):"";
 $idcomites=isset($_POST["idcomites"])? limpiarCadena($_POST["idcomites"]):"";
+$tipo=isset($_POST["tipo_opcion"])? limpiarCadena($_POST["tipo_opcion"]):"";
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idcomite)){
-			$rspta=$comite->insertar($nombre,$direccion, $responsable,$DNI, $dirresponsable, $cocinero,$idzona);
+			$rspta=$comite->insertar($nombre,$direccion, $responsable,$DNI, $dirresponsable, $cocinero, $DNIc,$idzona);
 			echo $rspta ? "Comite registrada" : "Comite no se pudo registrar";
 		}
 		else {
-			$rspta=$comite->editar($idcomite,$nombre,$direccion, $responsable,$DNI, $dirresponsable, 	$cocinero,$idzona);
+			$rspta=$comite->editar($idcomite,$nombre,$direccion, $responsable,$DNI, $dirresponsable, $cocinero , 	$DNIc ,$idzona);
 			echo $rspta ? "Comite actualizada" : "Comite no se pudo actualizar";
 		}
 	break;
@@ -30,7 +32,7 @@ switch ($_GET["op"]){
 	case 'guardarB':
 
 		if (empty($idcomite)){
-			$rspta=$comite->insertarB($beneficiario, $DNI,$edad, $responsable,$DNIr,$idcomites);
+			$rspta=$comite->insertarB($beneficiario, $DNI, $edad, $tipo, $responsable,$DNIr,$idcomites);
 			echo $rspta ? "Beneficiario registrado" : "beneficiario no se pudo registrar";
 		}
 		
@@ -75,14 +77,15 @@ switch ($_GET["op"]){
  				"3"=>$reg->DNI,
  				"4"=>$reg->dirresponsable,
  				"5"=>$reg->cocinero,
- 				"6"=>$reg->Zona,
- 				"7"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
+ 				"6"=>$reg->DNIc,
+ 				"7"=>$reg->Zona,
+ 				"8"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
  				'<span class="badge bg-red">DESACTIVADO</span>',
- 				"8"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomite.')"><i class="fa fa-pencil"></i></button>'.
+ 				"9"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomite.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idcomite.')"><i class="fa fa-close"></i></button>':
  					'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomite.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-primary btn-xs" onclick="activar('.$reg->idcomite.')"><i class="fa fa-check"></i></button>',
- 				"9"=>'<button class="btn btn-success btn-xs" onclick="beneficiario('.$reg->idcomite.')"><i class="fa fa-user"></i></button>'
+ 				"10"=>'<button class="btn btn-success btn-xs" onclick="beneficiario('.$reg->idcomite.')"><i class="fa fa-user"></i></button>'
  					
  				);
  		}
