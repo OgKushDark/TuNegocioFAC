@@ -219,17 +219,17 @@ if (empty($regn)) {
           <?php
           if ($_SESSION['personal'] == 1) {
 
-            echo '<li class="treeview" id="navSupervision">
+            echo '<li class="treeview" id="navPersonal">
               <a href="#">
                 <i class="fa fa-user"></i> <span>Personal</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="navSupervisionLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Supervisor</a></li>
+                <li id="navSupervisorLi"><a href="empleado.php"><i class="fa fa-plus-circle"></i>Supervisor</a></li>
               </ul>
 
               <ul class="treeview-menu">
-                <li id="navZonaLi"><a href="usuario.php"><i class="fa fa-plus-circle"></i>Usuario</a></li>
+                <li id="navUsuarioLi"><a href="usuario.php"><i class="fa fa-plus-circle"></i>Usuario</a></li>
               </ul>
 
             </li>';

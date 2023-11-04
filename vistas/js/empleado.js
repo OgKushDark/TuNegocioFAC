@@ -11,7 +11,7 @@ function init(){
 	})
 
 	$('#navPersonal').addClass("treeview active");
-    $('#navPersonalLi').addClass("active");
+    $('#navSupervisorLi').addClass("active");
 
     $("#imagenmuestra").show();
 	$("#imagenmuestra").attr("src","../files/personal/user.png");
@@ -58,6 +58,8 @@ function mostrarform(flag)
 	}
 }
 
+
+
 //Función cancelarform
 function cancelarform()
 {
@@ -97,6 +99,8 @@ function listar()
 	    "order": [[ 0, "desc" ]]//Ordenar (columna,orden)
 	}).DataTable();
 }
+
+
 //Función para guardar o editar
 
 function guardaryeditar(e)
@@ -143,9 +147,17 @@ function mostrar(idpersonal)
 		$("#imagenmuestra").attr("src","../files/personal/"+data.imagen);
 		$("#imagenactual").val(data.imagen);
 		$("#idpersonal").val(data.idpersonal);
+		$("#idzona1").val(data.idzona1);
+		$("#idzona1").selectpicker('refresh');
+		$("#idzona2").val(data.idzona2);
+		$("#idzona2").selectpicker('refresh');
+		$("#idzona3").val(data.idzona3);
+		$("#idzona3").selectpicker('refresh');
 
  	})
 }
+
+
 
 //Función para desactivar registros
 function desactivar(idpersonal)

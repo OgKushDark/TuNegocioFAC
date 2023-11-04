@@ -59,6 +59,13 @@ switch ($_GET["op"]){
  		
 	break;
 
+	case 'mostrarZonas':
+		$rspta=$empleado->mostrarZonas($idpersonal);
+ 		//Codificar el resultado utilizando json
+ 		echo json_encode($rspta);
+ 		
+	break;
+
 	case 'listar':
 		$rspta=$empleado->listar();
  		//Vamos a declarar un array
@@ -70,6 +77,7 @@ switch ($_GET["op"]){
 		 				"1"=>$reg->tipo_documento,
 		 				"2"=>$reg->num_documento,
 		 				"3"=>"<img src='../files/personal/".$reg->imagen."' height='50px' width='50px' >",
+		 				
 		 				"4"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
 		 				'<span class="badge bg-red">DESACTIVADO</span>',
 		 				"5"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idpersonal.')"><i class="fa fa-pencil"></i></button>'.
@@ -86,4 +94,6 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
+
+	
 }

@@ -72,6 +72,7 @@ if (!isset($_SESSION["idpersonal"])) {
 
     </div>
 
+  
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
 
@@ -122,12 +123,12 @@ if (!isset($_SESSION["idpersonal"])) {
 
                 <label for="idzona1" class="col-sm-2 control-label">Zona 01: </label>
                   <div class="col-sm-4">
-                    <select id="idzona1" name="idzona1" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 01" required></select>
+                    <select id="idzona1" name="idzona1" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 01" ></select>
                   </div>
 
                 <label for="idzona2" class="col-sm-2 control-label">Zona 02: </label>
                   <div class="col-sm-4">
-                    <select id="idzona2" name="idzona2" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 02" required></select>
+                    <select id="idzona2" name="idzona2" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 02" ></select>
                   </div>
               </div>
 
@@ -135,7 +136,7 @@ if (!isset($_SESSION["idpersonal"])) {
 
                 <label for="idzona3" class="col-sm-2 control-label">Zona 03: </label>
                   <div class="col-sm-4">
-                    <select id="idzona3" name="idzona3" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 03" required></select>
+                    <select id="idzona3" name="idzona3" class="form-control selectpicker" data-live-search="true" title="Seleccione zona 03" ></select>
                   </div>
                 
               </div>

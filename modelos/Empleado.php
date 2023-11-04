@@ -46,13 +46,14 @@ Class Empleado
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
+
 	//Implementar un método para listar los registros
 	public function listar()
 	{
 		$sql="SELECT * FROM personal";
 		return ejecutarConsulta($sql);		
 	}
-
+	
 	//Implementar un método para listar los registros y mostrar en el select
 	public function select()
 	{
