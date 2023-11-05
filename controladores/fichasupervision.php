@@ -23,6 +23,9 @@ $resp_cocina = isset($_POST["txtResponsableCocina"]) ? $_POST["txtResponsableCoc
 $total_beneficiarios = isset($_POST["txtBeneficiarios"]) ? $_POST["txtBeneficiarios"]: "";
 $total_madres_responsables = isset($_POST["txtMadresBeneficiarias"]) ? $_POST["txtMadresBeneficiarias"] : "";
 $raciones_distribuidas = isset($_POST["txtRacionesDistribuidas"]) ? $_POST["txtRacionesDistribuidas"]: "";
+$cantidad_recibida_fecha = isset($_POST["txtCantidadFechaHora"]) ? $_POST["txtCantidadFechaHora"] : "";
+$cantidad_recibida_leche = isset($_POST["txtCantidadLeche"]) ? $_POST["txtCantidadLeche"] : "";
+$cantidad_recibida_hojuelas = isset($_POST["txtCantidadHojuelas"]) ? $_POST["txtCantidadHojuelas"] : "";
 $racion_diaria_leche = isset($_POST["txtRacionLeche"]) ? $_POST["txtRacionLeche"] : "";
 $racion_diaria_hojuelas = isset($_POST["txtRacionHojuelas"]) ? $_POST["txtRacionHojuelas"] : "";
 $nro_dias_preparados = isset($_POST["txtDias"]) ? $_POST["txtDias"] : "";
@@ -79,7 +82,8 @@ switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($$idComite)){
 			$rspta=$ficha->insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
-			$total_madres_responsables,$raciones_distribuidas,$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
+			$total_madres_responsables,$raciones_distribuidas,$cantidad_recibida_fecha,$cantidad_recibida_leche,$cantidad_recibida_hojuelas,
+			$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
 			$nro_dias_preparados_hojuelas,$cantidad_utilizada_leche,$cantidad_utilizada_hojuelas,$stock_leche,$stock_hojuelas,
 			$stock_leche_dia_visita,$stock_hojuelas_dia_visita,$cantidad_faltante_leche,$cantidad_faltante_hojuelas,
 			$cantidad_sobrante_leche,$cantidad_sobrante_hojuelas,$idOpcion_condicion_producto,$observacion_condicion_producto,
@@ -269,6 +273,26 @@ switch ($_GET["op"]){
 		echo json_encode($results);
 
 	break;
+	case "obtenerIDultimaFicha":
+		$ficha = new Fichasupervision();
+		$rspta = $ficha->obtenerIDultimaFicha();
+
+		$data = Array();
+
+		while($reg=$rspta->fetch_object()){
+			$data[] = array(
+				"0" =>$reg->maximo,
+			);
+		}
+		$results = array(
+			"sEcho"=>1, //Información para el datatables
+			"iTotalRecords"=>count($data), //enviamos el total registros al datatable
+			"iTotalDisplayRecords"=>count($data), //enviamos el total registros a visualizar
+			"aaData"=>$data
+		);
+
+		echo json_encode($results);
+		break;
 
 
 }

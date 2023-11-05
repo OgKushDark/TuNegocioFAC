@@ -12,7 +12,7 @@ Class Fichasupervision
 
 	//Implementamos un método para insertar registros
 	public function insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
-	$total_madres_responsables,$raciones_distribuidas,$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
+	$total_madres_responsables,$raciones_distribuidas,$cantidad_recibida_fecha,$cantidad_recibida_leche,$cantidad_recibida_hojuelas,$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
 	$nro_dias_preparados_hojuelas,$cantidad_utilizada_leche,$cantidad_utilizada_hojuelas,$stock_leche,$stock_hojuelas,
 	$stock_leche_dia_visita,$stock_hojuelas_dia_visita,$cantidad_faltante_leche,$cantidad_faltante_hojuelas,
 	$cantidad_sobrante_leche,$cantidad_sobrante_hojuelas,$idOpcion_condicion_producto,$observacion_condicion_producto,
@@ -26,6 +26,7 @@ Class Fichasupervision
 	{
 		$sql="INSERT INTO ficha_supervision (idComite,nombre_presidenta,dni_presidenta,direccion_presidenta,
 		nombre_responsable_cocina,total_beneficiarios,total_madres_responsables,raciones_distribuidas_visita,
+		cantidad_recibida_fecha,cantidad_recibida_leche,cantidad_recibida_hojuelas,
 		racion_diaria_leche,racion_diaria_hojuelas,nro_dias_preparados,nro_dias_preparados_hojuelas,
 		cantidad_utilizada_leche,cantidad_utilizada_hojuelas,stock_leche,stock_hojuelas,stock_leche_dia_visita,
 		stock_hojuelas_dia_visita,cantidad_faltante_leche,cantidad_faltante_hojuelas,cantidad_sobrante_leche,
@@ -37,7 +38,7 @@ Class Fichasupervision
 		idOpcion_control_diario_beneficiarios,idOpcion_participacion_rol_cocina,idOpcion_apoyo_gastos,idOpcion_asistencia_asamblea_civil,
 		idOpcion_asistencia_actividad_mdc,idOpcion_desarrollo_otras_actividades,observaciones_recomendaciones,estado)
 		VALUES ('$idComite','$nombre_presidenta','$dni_presidenta','$dir_presidenta','$resp_cocina','$total_beneficiarios','$total_madres_responsables',
-		'$raciones_distribuidas','$racion_diaria_leche','$racion_diaria_hojuelas','$nro_dias_preparados','$nro_dias_preparados_hojuelas',
+		'$raciones_distribuidas','$cantidad_recibida_fecha','$cantidad_recibida_leche','$cantidad_recibida_hojuelas','$racion_diaria_leche','$racion_diaria_hojuelas','$nro_dias_preparados','$nro_dias_preparados_hojuelas',
 		'$cantidad_utilizada_leche','$cantidad_utilizada_hojuelas','$stock_leche','$stock_hojuelas','$stock_leche_dia_visita','$stock_hojuelas_dia_visita',
 		'$cantidad_faltante_leche','$cantidad_faltante_hojuelas','$cantidad_sobrante_leche','$cantidad_sobrante_hojuelas','$idOpcion_condicion_producto',
 		'$observacion_condicion_producto','$idOpcion_condicion_higiene','$observacion_codicion_higiene','$idOpcion_estado_utensilios','$observacion_estado_utensilios',
@@ -130,6 +131,10 @@ Class Fichasupervision
 				INNER JOIN comite s on s.idzona = z.idzona
 				WHERE s.idcomite = '$comiteID'";
 		
+		return ejecutarConsulta($sql);
+	}
+	public function obtenerIDultimaFicha(){
+		$sql = "SELECT ifnull(MAX(idFicha),0) AS maximo FROM ficha_supervision";
 		return ejecutarConsulta($sql);
 	}
 

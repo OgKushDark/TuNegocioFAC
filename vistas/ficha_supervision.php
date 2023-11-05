@@ -46,7 +46,7 @@ if (!isset($_SESSION["nombre"])) {
                     </div>
 
                     <div class="panel-body table-responsive" class="box-body" id="listadoregistros">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#ModalFicha"><i class="fa fa-plus"> Nuevo</i>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#ModalFicha" id="btnNuevo"><i class="fa fa-plus"> Nuevo</i>
                         </button>
                         <a href="../reportes/rptcategorias.php" target="_blank"><button class="btn btn-danger"><i class="fa fa-file"></i> Reporte</button></a>
                         <br><br>
@@ -88,7 +88,7 @@ if (!isset($_SESSION["nombre"])) {
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="panel-heading">
-                                                            <h2><b>FICHA DE SUPERVISIÓN Nº: <span>147</span></b></h2>
+                                                            <h2><b>FICHA DE SUPERVISIÓN Nº: <span id="idFicha">147</span></b></h2>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -196,6 +196,23 @@ if (!isset($_SESSION["nombre"])) {
                                                         <div class="col-md-6">
                                                             <label>HOJUELAS DE KIWICHA,AVENA,CEBADA,QUINUA AZUCARADA, CON VITAMINAS Y MINIRALES PRECODIDOS</label>
                                                         </div>
+                                                    </div>
+                                                    <br><br><br>
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                            <div class="col-md-5">
+                                                                <label>3.1 CANT. RECIBIDA FECHA</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="date" class="form-control" name="txtCantidadFechaHora" id="txtCantidadFechaHora">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input class="form-control" type="number" name="txtCantidadLeche" id="txtCantidadLeche" required>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" type="number" step="0.01" name="txtCantidadHojuelas" id="txtCantidadHojuelas" required>
                                                     </div>
                                                     <br><br><br>
                                                     <div class="col-md-4">
