@@ -7,7 +7,7 @@ function init(){
 
 	$("#myModalB").on("submit",function(e)
 	{
-		guardaryeditar(e);	
+		editarB(e);	
 	});
 	
 	$('#navConsultaV').addClass("treeview active");
@@ -124,14 +124,14 @@ function listar()
 
 //Función para guardar o editar
 
-function guardaryeditar(e)
+function editarB(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
 	//$("#btnGuardar").prop("disabled",true);
-	var formData = new FormData($("#formulario")[0]);
+	var formData = new FormData($("#formularioB")[0]);
 
 	$.ajax({
-		url: "../controladores/comite.php?op=guardaryeditar",
+		url: "../controladores/consultas.php?op=editarB",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -140,13 +140,13 @@ function guardaryeditar(e)
 	    success: function(datos)
 	    {                    
 	          swal({
-				  title: 'Comite',
+				  title: 'Beneficiario',
 				  type: 'success',
 					text:datos
 				});
-              $('#myModal').modal('hide');
+              $('#myModalB').modal('hide');
               	          
-	          mostrarform(false);
+	          mostrarformB(false);
 	          tabla.ajax.reload();
 
 
@@ -166,8 +166,68 @@ function mostrar(idbeneficiario)
 
 		$("#beneficiario").val(data.nombre);
  		$("#idbeneficiario").val(data.idbeneficiario);
-
+ 		$("#DNI").val(data.DNI);
+ 		$("#edad").val(data.edad);
+ 		$("#tipo_opcion").val(data.tipo_opcion);
+		$('#tipo_opcion').selectpicker('refresh');
+		$("#responsable").val(data.responsable);
+		$("#DNIr").val(data.DNIr);
  	})
+}
+
+//Función para desactivar registros
+function desactivarB(idbeneficiario)
+{
+	swal({
+						    title: "¿Desactivar?",
+						    text: "¿Está seguro Que Desea Desactivar el Beneficiario?",
+						    type: "warning",
+						    showCancelButton: true,
+								cancelButtonText: "No",
+								cancelButtonColor: '#FF0000',
+						    confirmButtonText: "Si",
+						    confirmButtonColor: "#0004FA",
+						    closeOnConfirm: false,
+						    closeOnCancel: false,
+						    showLoaderOnConfirm: true
+						    },function(isConfirm){
+						    if (isConfirm){
+									$.post("../controladores/consultas.php?op=desactivarB", {idbeneficiario : idbeneficiario}, function(e){
+										swal(
+											'!!! Desactivada !!!',e,'success')
+					            tabla.ajax.reload();
+				        	});
+						    }else {
+						    swal("! Cancelado ¡", "Se Cancelo la desactivacion del Beneficiario", "error");
+							 }
+							});
+}
+
+//Función para activar registros
+function activarB(idbeneficiario)
+{
+	swal({
+		    title: "¿Activar?",
+		    text: "¿Está seguro Que desea Activar el Beneficiario?",
+		    type: "warning",
+		    showCancelButton: true,
+				confirmButtonColor: '#0004FA',
+				confirmButtonText: "Si",
+		    cancelButtonText: "No",
+				cancelButtonColor: '#FF0000',
+		    closeOnConfirm: false,
+		    closeOnCancel: false,
+		    showLoaderOnConfirm: true
+		    },function(isConfirm){
+		    if (isConfirm){
+						$.post("../controladores/consultas.php?op=activarB", {idbeneficiario : idbeneficiario}, function(e){
+						swal("!!! Activada !!!", e ,"success");
+								tabla.ajax.reload();
+						});
+		    }else {
+		    swal("! Cancelado ¡", "Se Cancelo la activacion del Beneficiario", "error");
+			 }
+			});
 }
 
 

@@ -10,6 +10,13 @@ if (!isset($_SESSION["nombre"])) {
 
 	$consulta = new Consultas();
 
+	$idbeneficiario=isset($_POST["idbeneficiario"])? limpiarCadena($_POST["idbeneficiario"]):"";
+	$beneficiario=isset($_POST["beneficiario"])? limpiarCadena($_POST["beneficiario"]):"";
+	$DNI=isset($_POST["DNI"])? limpiarCadena($_POST["DNI"]):"";
+	$responsable=isset($_POST["responsable"])? limpiarCadena($_POST["responsable"]):"";
+	$edad=isset($_POST["edad"])? limpiarCadena($_POST["edad"]):"";
+	$DNIr=isset($_POST["DNIr"])? limpiarCadena($_POST["DNIr"]):"";
+	$tipo=isset($_POST["tipo_opcion"])? limpiarCadena($_POST["tipo_opcion"]):"";
 	switch ($_GET["op"]) {
 
 		case 'comprasfecha':
@@ -70,9 +77,9 @@ if (!isset($_SESSION["nombre"])) {
 					"6"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
  					'<span class="badge bg-red">DESACTIVADO</span>',
 					"7"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idbeneficiario.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idbeneficiario.')"><i class="fa fa-close"></i></button>':
+ 					' <button class="btn btn-danger btn-xs" onclick="desactivarB('.$reg->idbeneficiario.')"><i class="fa fa-close"></i></button>':
  					'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idbeneficiario.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-primary btn-xs" onclick="activar('.$reg->idbeneficiario.')"><i class="fa fa-check"></i></button>',
+ 					' <button class="btn btn-primary btn-xs" onclick="activarB('.$reg->idbeneficiario.')"><i class="fa fa-check"></i></button>',
 				);
 			}
 			$results = array(
@@ -84,6 +91,25 @@ if (!isset($_SESSION["nombre"])) {
 			echo json_encode($results);
 
 			break;
+
+		case 'editarB':
+		
+			$rspta=$consulta->editarB($idbeneficiario,$beneficiario,$DNI,$edad, $tipo, $responsable,$DNIr);
+			echo $rspta ? "Beneficiario actualizado" : "Beneficiario no se pudo actualizar";
+		
+		break;
+
+		case 'desactivarB':
+		$rspta=$consulta->desactivarB($idbeneficiario);
+ 		echo $rspta ? "Beneficiario Desactivado" : "Beneficiario no se puede desactivar";
+ 		break;
+	break;
+
+	case 'activarB':
+		$rspta=$consulta->activarB($idbeneficiario);
+ 		echo $rspta ? "Beneficiario activado" : "Beneficiario no se puede activar";
+ 		break;
+	break;
 
 		case 'ventasfechaproducto':
 			$fecha_inicio = $_REQUEST["fecha_inicio"];
