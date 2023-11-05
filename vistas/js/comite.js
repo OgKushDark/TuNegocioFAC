@@ -42,6 +42,22 @@ function limpiar()
 	$("#idzona").selectpicker('refresh');
 
 
+
+
+}
+
+function limpiarB()
+{
+	
+	$("#beneficiario").val("");
+	$("#DNIb").val("");
+	$("#edad").val("");
+	$("#responsableB").val("");
+	$("#DNIr").val("");
+	$("#tipo_opcion").val("");
+	$("#tipo_opcion").selectpicker('refresh');
+
+
 }
 
 //Función mostrar formulario
@@ -76,20 +92,7 @@ function mostrarformB(flag)
 	}
 }
 
-function mostrarformBL(flag)
-{
-	limpiar();
-	if (flag)
-	{
-		$("#listadoregistrosB").show();
-		$('#myModalsB').modal('show');
-	}
-	else
-	{
-		$("#listadoregistros").show();
-		$("#btnagregarB").show();
-	}
-}
+
 
 //Función cancelarform
 function cancelarform()
@@ -199,7 +202,7 @@ function guardarB(e)
 	    }
 
 	});
-	limpiar();
+	limpiarB();
 	//location.reload();
 }
 

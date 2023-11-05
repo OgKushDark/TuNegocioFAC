@@ -30,7 +30,7 @@ if (!isset($_SESSION["nombre"])) {
             <div class="panel panel-default" style="border-color: #666; border-width: 3px; border-style: double;">
               <div class="panel-heading">
                 <div class="box-header with-border">
-                  <h1 class="box-title">Consulta de Ventas por fecha y vendedor</h1>
+                  <h1 class="box-title">Lista de Beneficiarios</h1>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse">
                       <i class="fa fa-minus"></i>

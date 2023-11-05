@@ -202,9 +202,9 @@ if (!isset($_SESSION["idpersonal"])) {
               </div>
 
               <div class="form-group">
-                <label for="DNI" class="col-sm-2 control-label">DNI:</label>
+                <label for="DNIb" class="col-sm-2 control-label">DNI:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="DNI" id="DNI" maxlength="8" placeholder="DNI" required>
+                  <input type="text" class="form-control" name="DNIb" id="DNIb" maxlength="8" placeholder="DNI" required>
                 </div>
               </div>
 
@@ -227,9 +227,9 @@ if (!isset($_SESSION["idpersonal"])) {
               </div>
 
               <div class="form-group">
-                <label for="responsable" class="col-sm-2 control-label">Reponsable:</label>
+                <label for="responsableB" class="col-sm-2 control-label">Reponsable:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="responsable" id="responsable" maxlength="500" placeholder="responsable" required>
+                  <input type="text" class="form-control" name="responsableB" id="responsableB" maxlength="500" placeholder="responsable" required>
                 </div>
               </div>
               <div class="form-group">

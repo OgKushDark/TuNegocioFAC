@@ -18,10 +18,10 @@ Class Comite
 		return ejecutarConsulta($sql);
 	}
 
-	public function insertarB($beneficiario, $DNI,$edad, $tipo , $responsable,$DNIr,$idcomites)
+	public function insertarB($beneficiario, $DNIb,$edad, $tipo , $responsableB,$DNIr,$idcomites)
 	{
 		$sql="INSERT INTO beneficiario (nombre,DNI, edad, tipo, responsable,DNIr, idcomite,condicion)
-		VALUES ('$beneficiario', '$DNI','$edad','$tipo', '$responsable','$DNIr','$idcomites','1')";
+		VALUES ('$beneficiario', '$DNIb','$edad','$tipo', '$responsableB','$DNIr','$idcomites','1')";
 		return ejecutarConsulta($sql);
 	}
 

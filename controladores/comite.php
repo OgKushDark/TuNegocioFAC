@@ -8,7 +8,9 @@ $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $beneficiario=isset($_POST["beneficiario"])? limpiarCadena($_POST["beneficiario"]):"";
 $direccion=isset($_POST["direccion"])? limpiarCadena($_POST["direccion"]):"";
 $DNI=isset($_POST["DNI"])? limpiarCadena($_POST["DNI"]):"";
+$DNIb=isset($_POST["DNIb"])? limpiarCadena($_POST["DNIb"]):"";
 $responsable=isset($_POST["responsable"])? limpiarCadena($_POST["responsable"]):"";
+$responsableB=isset($_POST["responsableB"])? limpiarCadena($_POST["responsableB"]):"";
 $dirresponsable=isset($_POST["dirresponsable"])? limpiarCadena($_POST["dirresponsable"]):"";
 $cocinero=isset($_POST["cocinero"])? limpiarCadena($_POST["cocinero"]):"";
 $idzona=isset($_POST["idzona"])? limpiarCadena($_POST["idzona"]):"";
@@ -32,7 +34,7 @@ switch ($_GET["op"]){
 	case 'guardarB':
 
 		if (empty($idcomite)){
-			$rspta=$comite->insertarB($beneficiario, $DNI, $edad, $tipo, $responsable,$DNIr,$idcomites);
+			$rspta=$comite->insertarB($beneficiario, $DNIb, $edad, $tipo, $responsableB,$DNIr,$idcomites);
 			echo $rspta ? "Beneficiario registrado" : "beneficiario no se pudo registrar";
 		}
 		
