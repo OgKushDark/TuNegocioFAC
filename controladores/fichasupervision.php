@@ -225,6 +225,25 @@ switch ($_GET["op"]){
 					echo '<option value=' .$reg->idcomite . '>' . $reg->nombre . '</option>';
 				}
 	break;
+	case "selectComites1":	
+		$fichas = new Fichasupervision();
+
+  // Suponemos que $idzona contiene la zona seleccionada (puede obtenerse desde el formulario o la solicitud AJAX)
+  $idzona = $_POST['zona']; // Asegúrate de validar y limpiar los datos recibidos desde la solicitud AJAX
+
+  $rspta = $fichas->SelectComites1($idzona);
+
+  // Inicializamos una variable para almacenar las opciones HTML
+  $options = "";
+
+  while ($reg = $rspta->fetch_object()) {
+    // Generamos las opciones HTML basadas en los datos recuperados de la base de datos
+    $options .= '<option value="' . $reg->idcomite . '">' . $reg->nombre . '</option>';
+  }
+
+  // Devolvemos las opciones como respuesta a la solicitud AJAX
+  echo $options;
+	break;
 	case "obtenerDataPorComite":
 		$fichas = new Fichasupervision();
 		$rspta = $fichas->obtenerDataPorComite($idComite);

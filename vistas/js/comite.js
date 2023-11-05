@@ -76,6 +76,21 @@ function mostrarformB(flag)
 	}
 }
 
+function mostrarformBL(flag)
+{
+	limpiar();
+	if (flag)
+	{
+		$("#listadoregistrosB").show();
+		$('#myModalsB').modal('show');
+	}
+	else
+	{
+		$("#listadoregistros").show();
+		$("#btnagregarB").show();
+	}
+}
+
 //Función cancelarform
 function cancelarform()
 {
@@ -117,6 +132,9 @@ function listar()
 	    "order": [[ 0, "desc" ]]//Ordenar (columna,orden)
 	}).DataTable();
 }
+
+//Función Listar
+
 //Función para guardar o editar
 
 function guardaryeditar(e)
@@ -219,6 +237,8 @@ function beneficiario(idcomite)
 
  	})
 }
+
+
 
 //Función para desactivar registros
 function desactivar(idcomite)

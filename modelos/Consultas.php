@@ -20,15 +20,20 @@ Class Consultas
 		return ejecutarConsulta($sql);		
 	}
 
-	public function ventasfechavendedor($fecha_inicio,$fecha_fin,$idcliente)
+	public function ListaBeneficiario($idcomite)
 	{
-		if($idcliente == "Todos"){
-			$sql="SELECT DATE(v.fecha_hora) as fecha,u.nombre as personal, p.nombre as cliente,v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN personal u ON v.idpersonal=u.idpersonal WHERE DATE(v.fecha_hora)>='$fecha_inicio' AND DATE(v.fecha_hora)<='$fecha_fin' AND v.tipo_comprobante IN ('Factura','Boleta','Nota')";
-		}else{
-			$sql="SELECT DATE(v.fecha_hora) as fecha,u.nombre as personal, p.nombre as cliente,v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN personal u ON v.idpersonal=u.idpersonal WHERE DATE(v.fecha_hora)>='$fecha_inicio' AND DATE(v.fecha_hora)<='$fecha_fin' AND u.idpersonal='$idcliente' AND v.tipo_comprobante IN ('Factura','Boleta','Nota')";
-		}
+		
+			$sql="SELECT idbeneficiario, nombre, DNI, edad, tipo, responsable, DNIr, condicion FROM beneficiario WHERE idcomite ='$idcomite'";
+		
+		
 		
 		return ejecutarConsulta($sql);		
+	}
+
+	public function mostrar($idbeneficiario)
+	{
+		$sql="SELECT * FROM beneficiario WHERE idbeneficiario='$idbeneficiario'";
+		return ejecutarConsultaSimpleFila($sql);
 	}
 
 	public function ventasfechaproducto($fecha_inicio,$fecha_fin,$idproducto,$idcliente)

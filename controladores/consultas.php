@@ -43,58 +43,36 @@ if (!isset($_SESSION["nombre"])) {
 
 			break;
 
-		case 'ventasfechacliente':
-			$fecha_inicio = $_REQUEST["fecha_inicio"];
-			$fecha_fin = $_REQUEST["fecha_fin"];
-			$idcliente = $_REQUEST["idcliente"];
+		
 
-			$rspta = $consulta->ventasfechacliente($fecha_inicio, $fecha_fin, $idcliente);
+		case 'mostrar':
+			$rspta=$consulta->mostrar($idbeneficiario);
+	 		//Codificar el resultado utilizando json
+	 		echo json_encode($rspta);
+	 		break;
+		break;
+
+		case 'ListaBeneficiario':
+			$idcomite = $_REQUEST["idcomite"];
+
+			$rspta = $consulta->ListaBeneficiario($idcomite);
 			//Vamos a declarar un array
 			$data = array();
 
 			while ($reg = $rspta->fetch_object()) {
 				$data[] = array(
-					"0" => $reg->fecha,
-					"1" => $reg->personal,
-					"2" => $reg->cliente,
-					"3" => $reg->tipo_comprobante,
-					"4" => $reg->serie_comprobante . ' ' . $reg->num_comprobante,
-					"5" => $reg->total_venta,
-					"6" => $reg->impuesto,
-					"7" => ($reg->estado == 'Aceptado' || $reg->estado == 'Activado' || $reg->estado == 'Por Enviar') ? '<span class="badge bg-green">'.$reg->estado.'</span>' :
-						'<span class="badge bg-red">'.$reg->estado.'</span>'
-				);
-			}
-			$results = array(
-				"sEcho" => 1, //Información para el datatables
-				"iTotalRecords" => count($data), //enviamos el total registros al datatable
-				"iTotalDisplayRecords" => count($data), //enviamos el total registros a visualizar
-				"aaData" => $data
-			);
-			echo json_encode($results);
-
-			break;
-
-		case 'ventasfechavendedor':
-			$fecha_inicio = $_REQUEST["fecha_inicio"];
-			$fecha_fin = $_REQUEST["fecha_fin"];
-			$idcliente = $_REQUEST["idcliente"];
-
-			$rspta = $consulta->ventasfechavendedor($fecha_inicio, $fecha_fin, $idcliente);
-			//Vamos a declarar un array
-			$data = array();
-
-			while ($reg = $rspta->fetch_object()) {
-				$data[] = array(
-					"0" => $reg->fecha,
-					"1" => $reg->personal,
-					"2" => $reg->cliente,
-					"3" => $reg->tipo_comprobante,
-					"4" => $reg->serie_comprobante . ' ' . $reg->num_comprobante,
-					"5" => $reg->total_venta,
-					"6" => $reg->impuesto,
-					"7" => ($reg->estado == 'Aceptado' || $reg->estado == 'Activado' || $reg->estado == 'Por Enviar') ? '<span class="badge bg-green">'.$reg->estado.'</span>' :
-						'<span class="badge bg-red">'.$reg->estado.'</span>'
+					"0" => $reg->nombre,
+					"1" => $reg->DNI,
+					"2" => $reg->edad,
+					"3" => $reg->tipo,
+					"4" => $reg->responsable,
+					"5" => $reg->DNIr,
+					"6"=>($reg->condicion)?'<span class="badge bg-green">ACTIVADO</span>':
+ 					'<span class="badge bg-red">DESACTIVADO</span>',
+					"7"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idbeneficiario.')"><i class="fa fa-pencil"></i></button>'.
+ 					' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idbeneficiario.')"><i class="fa fa-close"></i></button>':
+ 					'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idbeneficiario.')"><i class="fa fa-pencil"></i></button>'.
+ 					' <button class="btn btn-primary btn-xs" onclick="activar('.$reg->idbeneficiario.')"><i class="fa fa-check"></i></button>',
 				);
 			}
 			$results = array(

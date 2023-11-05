@@ -250,6 +250,10 @@ if (!isset($_SESSION["idpersonal"])) {
     </div>
     <!-- Fin modal -->
 
+             
+          
+     
+
   <?php
   } else {
     require 'noacceso.php';

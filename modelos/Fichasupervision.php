@@ -119,6 +119,11 @@ Class Fichasupervision
 		$sql = "SELECT * FROM comite";
 		return ejecutarConsulta($sql);
 	}
+	public function SelectComites1($idzona)
+	{
+		$sql = "SELECT * FROM comite where idzona='$idzona'";
+		return ejecutarConsulta($sql);
+	}
 	public function obtenerDataPorComite($comiteID){
 		$sql = "SELECT s.direccion, s.responsable,s.dni ,s.dirresponsable,s.cocinero
 				FROM zona z

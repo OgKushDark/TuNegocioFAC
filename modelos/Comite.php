@@ -60,6 +60,14 @@ Class Comite
 		$sql="SELECT idcomite, nombre FROM comite WHERE idcomite='$idcomite'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
+	public function beneficiarioL($idcomite)
+	{
+		$sql="SELECT c.idcomite,c.nombre as Comite, b.nombre,b.DNI,  b.responsable, b.DNIr 
+				FROM comite c
+				inner join beneficiario b on b.idcomite = c.idcomite where c.idcomite='$idcomite' and 
+				b.condicion='1'";
+		return ejecutarConsultaSimpleFila($sql);
+	}
 
 	//Implementar un método para listar los registros
 	public function listar()
