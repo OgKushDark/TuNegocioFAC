@@ -298,28 +298,19 @@ if (empty($regn)) {
           if ($_SESSION['consultav'] == 1) {
             echo '<li class="treeview" id="navConsultaV">
               <a href="#">
-                <i class="fa fa-pie-chart"></i> <span>Consulta Ventas</span>
+                <i class="fa fa-pie-chart"></i> <span>Consultas</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li id="navConsultaVLi"><a href="ventasfechacliente.php"><i class="fa fa-plus-circle"></i> Consulta Ventas x Cliente</a></li>                
-              </ul>
+              
               <ul class="treeview-menu">
                 <li id="navConsultaVentasVLi"><a href="ListaBeneficiarios.php"><i class="fa fa-plus-circle"></i>Lista Beneficiario</a></li>                
               </ul>
-              <ul class="treeview-menu">
-                <li id="navConsultaProductoVLi"><a href="ventasfechaproducto.php"><i class="fa fa-plus-circle"></i> Consulta Ventas x Producto</a></li>                
-              </ul>
+             
             </li>';
           }
           ?>
 
-          <li>
-            <a href="acerca.php">
-              <i class="fa fa-info-circle treeview active" id="liAcerca"></i> <span>Acerca De...</span>
-              <small class="label pull-right bg-yellow">SOL</small>
-            </a>
-          </li>
+        
 
         </ul>
       </section>
