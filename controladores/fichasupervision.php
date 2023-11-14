@@ -1,6 +1,6 @@
 <?php 
 require_once "../modelos/Fichasupervision.php";
-
+session_start();
 $ficha=new Fichasupervision();
 
 $idpersona=isset($_POST["idpersona"])? limpiarCadena($_POST["idpersona"]):"";
@@ -73,14 +73,14 @@ $idOpcion_asistencia_asamblea_civil = isset($_POST["cbxAsistenciaAsamblea"]) ? $
 $idOpcion_asistencia_actividad_mdc = isset($_POST["cbxAsistenciaActividad"]) ? $_POST["cbxAsistenciaActividad"] : "";
 $idOpcion_desarrollo_otras_actividades = isset($_POST["cbxDesarrolloParticipacion"]) ? $_POST["cbxDesarrolloParticipacion"] : "";
 $observaciones_recomendaciones = isset($_POST["txtObservacion"]) ? $_POST["txtObservacion"] : "";
-
+$usuario_creacion = $_SESSION['idusuario'];
 
 
 
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
-		if (empty($$idComite)){
+		if (empty($idComite)){
 			$rspta=$ficha->insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
 			$total_madres_responsables,$raciones_distribuidas,$cantidad_recibida_fecha,$cantidad_recibida_leche,$cantidad_recibida_hojuelas,
 			$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
@@ -93,7 +93,7 @@ switch ($_GET["op"]){
 			$observacion_limpieza,$resolucion_municipal,$acta_instalacion_comite,$libro_actas,$cartel_identificacion,$sello_comite,
 			$idOpcion_control_preparacion_diario,$idOpcion_control_diario_beneficiarios,$idOpcion_participacion_rol_cocina,
 			$idOpcion_apoyo_gastos,$idOpcion_asistencia_asamblea_civil,$idOpcion_asistencia_actividad_mdc,
-			$idOpcion_desarrollo_otras_actividades,$observaciones_recomendaciones);
+			$idOpcion_desarrollo_otras_actividades,$observaciones_recomendaciones,$usuario_creacion);
 			echo $rspta ? "Ficha registrada" : "Ficha no se pudo registrar";
 		}
 		else {

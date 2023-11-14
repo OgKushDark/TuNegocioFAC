@@ -19,7 +19,7 @@ if (!isset($_SESSION["idpersonal"])) {
   if ($_SESSION['inicio'] == 1) {
 
     $consulta = new Consultas();
-
+    /*
     $rsptav = $consulta->totalstock();
     $regv = $rsptav->fetch_object();
     $totalstock = $regv->totalstock;
@@ -69,7 +69,7 @@ if (!isset($_SESSION["idpersonal"])) {
     //Quitamos la última coma
     $nombreV = substr($nombreV, 0, -1);
     $productosm = substr($productosm, 0, -1);
-
+    */
 
 ?>
     <!--Contenido-->
