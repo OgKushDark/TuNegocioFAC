@@ -53,8 +53,8 @@ if (!isset($_SESSION["nombre"])) {
                         <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover" width="100%">
                             <thead>
                                 <th>Nº Ficha</th>
-                                <th>Presidenta</th>
-                                <th>Responsable Cocina</th>
+                                <th>Beneficiarios</th>
+                                <th>Madres Responsables</th>
                             </thead>
                             <tbody>
                             </tbody>

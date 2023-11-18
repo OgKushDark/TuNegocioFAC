@@ -11,7 +11,7 @@ Class Fichasupervision
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
+	public function insertar($idComite,$total_beneficiarios,
 	$total_madres_responsables,$raciones_distribuidas,$cantidad_recibida_fecha,$cantidad_recibida_leche,$cantidad_recibida_hojuelas,$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
 	$nro_dias_preparados_hojuelas,$cantidad_utilizada_leche,$cantidad_utilizada_hojuelas,$stock_leche,$stock_hojuelas,
 	$stock_leche_dia_visita,$stock_hojuelas_dia_visita,$cantidad_faltante_leche,$cantidad_faltante_hojuelas,
@@ -24,8 +24,8 @@ Class Fichasupervision
 	$idOpcion_apoyo_gastos,$idOpcion_asistencia_asamblea_civil,$idOpcion_asistencia_actividad_mdc,
 	$idOpcion_desarrollo_otras_actividades,$observaciones_recomendaciones,$usuario_creacion)
 	{
-		$sql="INSERT INTO ficha_supervision (idComite,nombre_presidenta,dni_presidenta,direccion_presidenta,
-		nombre_responsable_cocina,total_beneficiarios,total_madres_responsables,raciones_distribuidas_visita,
+		$sql="INSERT INTO ficha_supervision (idComite,
+		total_beneficiarios,total_madres_responsables,raciones_distribuidas_visita,
 		cantidad_recibida_fecha,cantidad_recibida_leche,cantidad_recibida_hojuelas,
 		racion_diaria_leche,racion_diaria_hojuelas,nro_dias_preparados,nro_dias_preparados_hojuelas,
 		cantidad_utilizada_leche,cantidad_utilizada_hojuelas,stock_leche,stock_hojuelas,stock_leche_dia_visita,
@@ -37,7 +37,7 @@ Class Fichasupervision
 		resolucion_municipal,acta_instalacion_comite,libro_actas,cartel_identificacion,sello_comite,idOpcion_control_preparacion_diario,
 		idOpcion_control_diario_beneficiarios,idOpcion_participacion_rol_cocina,idOpcion_apoyo_gastos,idOpcion_asistencia_asamblea_civil,
 		idOpcion_asistencia_actividad_mdc,idOpcion_desarrollo_otras_actividades,observaciones_recomendaciones,estado,usuario_creacion)
-		VALUES ('$idComite','$nombre_presidenta','$dni_presidenta','$dir_presidenta','$resp_cocina','$total_beneficiarios','$total_madres_responsables',
+		VALUES ('$idComite','$total_beneficiarios','$total_madres_responsables',
 		'$raciones_distribuidas','$cantidad_recibida_fecha','$cantidad_recibida_leche','$cantidad_recibida_hojuelas','$racion_diaria_leche','$racion_diaria_hojuelas','$nro_dias_preparados','$nro_dias_preparados_hojuelas',
 		'$cantidad_utilizada_leche','$cantidad_utilizada_hojuelas','$stock_leche','$stock_hojuelas','$stock_leche_dia_visita','$stock_hojuelas_dia_visita',
 		'$cantidad_faltante_leche','$cantidad_faltante_hojuelas','$cantidad_sobrante_leche','$cantidad_sobrante_hojuelas','$idOpcion_condicion_producto',

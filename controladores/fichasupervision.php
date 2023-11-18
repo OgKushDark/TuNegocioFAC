@@ -81,7 +81,7 @@ $usuario_creacion = $_SESSION['idusuario'];
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idComite)){
-			$rspta=$ficha->insertar($idComite,$nombre_presidenta,$dni_presidenta,$dir_presidenta,$resp_cocina,$total_beneficiarios,
+			$rspta=$ficha->insertar($idComite,$total_beneficiarios,
 			$total_madres_responsables,$raciones_distribuidas,$cantidad_recibida_fecha,$cantidad_recibida_leche,$cantidad_recibida_hojuelas,
 			$racion_diaria_leche,$racion_diaria_hojuelas,$nro_dias_preparados,
 			$nro_dias_preparados_hojuelas,$cantidad_utilizada_leche,$cantidad_utilizada_hojuelas,$stock_leche,$stock_hojuelas,
@@ -173,8 +173,8 @@ switch ($_GET["op"]){
 		while($reg=$rspta->fetch_object()){
 			$data[]=array(
 				"0" => $reg->idFicha,
-				"1" => $reg->nombre_presidenta,
-				"2" => $reg->nombre_responsable_cocina,
+				"1" => $reg->total_beneficiarios,
+				"2" => $reg->total_madres_responsables,
 			);
 		}
 			$results = array(
