@@ -140,8 +140,8 @@ function mostrar(id_negocio){
 			data=JSON.parse(data);
 			console.log(data);
 			mostrarform(true);
-			$("#clave_certificado").val(data.clave_certificado);
-			$("#estado_certificado").val(data.estado_certificado);
+			//$("#clave_certificado").val(data.clave_certificado);
+			//$("#estado_certificado").val(data.estado_certificado);
 			$("#codigo").val(data.codigo);
 			$("#nombre").val(data.nombre);
 			$("#ndocumento").val(data.ndocumento);
@@ -154,14 +154,14 @@ function mostrar(id_negocio){
 			$("#imagenactual").val(data.logo);
 			$("#pais").val(data.pais);
 			$("#ciudad").val(data.ciudad);
-			$("#nombre_impuesto").val(data.nombre_impuesto);
-			$("#monto_impuesto").val(data.monto_impuesto);
-			$("#moneda").val(data.moneda);
-			$("#simbolo").val(data.simbolo);
+		//	$("#nombre_impuesto").val(data.nombre_impuesto);
+		//	$("#monto_impuesto").val(data.monto_impuesto);
+		//	$("#moneda").val(data.moneda);
+		//	$("#simbolo").val(data.simbolo);
 			$("#id_negocio").val(data.id_negocio);
-			$("#usuario_sol").val(data.usuario_sol);
-			$("#clave_sol").val(data.clave_sol);
-			$("#ruta_certificado").val(data.ruta_certificado);
+			//$("#usuario_sol").val(data.usuario_sol);
+			//$("#clave_sol").val(data.clave_sol);
+			//$("#ruta_certificado").val(data.ruta_certificado);
 
 		});
 }

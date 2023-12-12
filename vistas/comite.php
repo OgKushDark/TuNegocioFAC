@@ -7,7 +7,7 @@ if (!isset($_SESSION["idpersonal"])) {
 } else {
   require 'modulos/header.php';
   //Usuario revisa el contenido
-  if ($_SESSION['almacen'] == 1) {
+  if ($_SESSION['configuracion'] == 1) {
 ?>
     <!--Contenido-->
     <!-- Content Wrapper. Contains page content -->

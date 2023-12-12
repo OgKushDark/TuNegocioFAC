@@ -138,9 +138,9 @@ case 'mostrar_simbolo':
 			"4"=>$reg->telefono,
 			"5"=>$reg->email,
 			"6"=>$reg->ciudad.'-'.$reg->pais,
-			"7"=>$reg->nombre_impuesto.' '.$reg->monto_impuesto.' %',
-			"8"=>$reg->simbolo.'- '.$reg->moneda,
-			"9"=>'<button class="btn btn-warning btn-xs" id="btn_lista" onclick="mostrar('.$reg->id_negocio.')"><i class="fa fa-pencil"></i></button>',
+		//	"7"=>$reg->nombre_impuesto.' '.$reg->monto_impuesto.' %',
+		//	"8"=>$reg->simbolo.'- '.$reg->moneda,
+			"7"=>'<button class="btn btn-warning btn-xs" id="btn_lista" onclick="mostrar('.$reg->id_negocio.')"><i class="fa fa-pencil"></i></button>',
 		);
 	}
 
