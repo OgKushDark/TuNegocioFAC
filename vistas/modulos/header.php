@@ -138,7 +138,7 @@ if (empty($regn)) {
                 <li class="user-header">
 
                   <p style="margin-top: 50px;">
-                    Sistema de Control y Facturacón
+                    Sistema de Vaso de Leche
                     <small>Version 2.0</small>
                   </p>
                 </li>

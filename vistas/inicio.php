@@ -92,14 +92,14 @@ if (!isset($_SESSION["idpersonal"])) {
             <div class="panel panel-default">
               <div class="panel-heading">
                 <div class="box-header">
-                  <h1 class="box-title">A continuación puedes seleccionar los criterios para mostrar el resumen</h1>
+                  <h1 class="box-title"></h1>
 
                 </div>
               </div>
 
               <div class="panel-body">
 
-                <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+           <!--      <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
                   <label>Fecha Inicio</label>
                   <div class="input-group date">
                     <div class="input-group-addon">
@@ -107,9 +107,9 @@ if (!isset($_SESSION["idpersonal"])) {
                     </div>
                     <input type="date" class="form-control" name="fecha_inicio" id="fecha_inicio" value="<?php echo date("Y-m-d"); ?>">
                   </div>
-                </div>
+                </div> -->
 
-                <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <!--   <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
                   <label>Fecha Fin</label>
                   <div class="input-group date">
                     <div class="input-group-addon">
@@ -117,9 +117,9 @@ if (!isset($_SESSION["idpersonal"])) {
                     </div>
                     <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" value="<?php echo date("Y-m-d"); ?>">
                   </div>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4 left">
+               <!--  <div class="col-lg-4 left">
                   <label id="lblSucursal2">Vendedor:</label>
                   <div class="form-group has-success">
 
@@ -131,7 +131,7 @@ if (!isset($_SESSION["idpersonal"])) {
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
 
             </div>
