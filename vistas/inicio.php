@@ -139,7 +139,7 @@ if (!isset($_SESSION["idpersonal"])) {
         </div>
       </section>
 
-      <section class="content">
+      <!-- <section class="content">
         <div class="row">
           <div class="col-md-12">
             <div class="box">
@@ -155,8 +155,8 @@ if (!isset($_SESSION["idpersonal"])) {
                   </button>
                 </div>
               </div>
-              <!-- /.box-header -->
-              <!-- centro -->
+               /.box-header 
+              centro 
               <div class="panel-body">
 
                 <?php
@@ -315,7 +315,7 @@ if (!isset($_SESSION["idpersonal"])) {
                         <?php echo $porcentcate; ?>% total de categorias
                       </span>
                     </div>
-                    <!-- /.info-box-content -->
+                     /.info-box-content 
                   </div>
                 </div>
 
@@ -336,20 +336,15 @@ if (!isset($_SESSION["idpersonal"])) {
                         <?php echo round($porcentart, 2); ?>% de la capacidad de almacen
                       </span>
                     </div>
-                    <!-- /.info-box-content -->
                   </div>
                 </div>
 
 
-                <!--Fin centro -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
 
-            <!--------------------->
+            
 
             <div class="row">
               <div class="col-md-6">
-                <!-- AREA CHART -->
                 <div class="box box-primary">
                   <div class="box-header with-border">
                     <h3 class="box-title" style="font-size:17px;">Compras - Últimos 10 días</h3>
@@ -360,10 +355,10 @@ if (!isset($_SESSION["idpersonal"])) {
                   </div>
                   <div class="box-body">
                     <canvas id="compras" width="400" height="300"></canvas>
-                  </div><!-- /.box-body -->
-                </div><!-- /.box -->
+                 
+             
 
-                <!-- DONUT CHART -->
+               
                 <div class="box box-danger">
                   <div class="box-header with-border">
                     <h3 class="box-title" style="font-size:17px;">Productos más vendidos</h3>
@@ -374,12 +369,12 @@ if (!isset($_SESSION["idpersonal"])) {
                   </div>
                   <div class="box-body">
                     <canvas id="pieChart" width="300" height="200"></canvas>
-                  </div><!-- /.box-body -->
-                </div><!-- /.box -->
+                  </div
+                </div>
 
-              </div><!-- /.col (LEFT) -->
+              </div>
               <div class="col-md-6">
-                <!-- LINE CHART -->
+              
                 <div class="box box-info">
                   <div class="box-header with-border">
                     <h3 class="box-title" style="font-size:17px;">Ventas - Últimos 12 meses</h3>
@@ -390,10 +385,10 @@ if (!isset($_SESSION["idpersonal"])) {
                   </div>
                   <div class="box-body">
                     <canvas id="ventas" width="400" height="300"></canvas>
-                  </div><!-- /.box-body -->
-                </div><!-- /.box -->
+                  </div>
+                </div>
 
-                <!-- BAR CHART -->
+                
                 <div class="box box-success">
                   <div class="box-header with-border">
                     <h3 class="box-title" style="font-size:17px;">Stock Bajo - Productos</h3>
@@ -419,18 +414,18 @@ if (!isset($_SESSION["idpersonal"])) {
                       </tfoot>
                     </table>
                   </div>
-                </div><!-- /.box -->
+                
 
-              </div><!-- /.col (RIGHT) -->
+              
             </div>
 
-            <!------------------->
+          
 
 
-          </div><!-- /.row -->
+       
 
 
-      </section>
+      </section> -->
 
     </div>
     <!--Fin-Contenido-->
