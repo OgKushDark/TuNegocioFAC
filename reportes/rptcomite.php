@@ -29,30 +29,38 @@ $y_axis_initial = 25;
 $pdf->SetFont('Arial','B',12);
 
 $pdf->Cell(40,6,'',0,0,'C');
-$pdf->Cell(100,6,'LISTA DE CATEGORIAS',1,0,'C'); 
+$pdf->Cell(100,6,'LISTA DE COMITE',1,0,'C'); 
 $pdf->Ln(10);
  
 //Creamos las celdas para los títulos de cada columna y le asignamos un fondo gris y el tipo de letra
 $pdf->SetFillColor(232,232,232); 
 $pdf->SetFont('Arial','B',10);
-$pdf->Cell(70,6,'Nombre',1,0,'C',1);
+$pdf->Cell(58,6,'Nombre',1,0,'C',1);
+$pdf->Cell(30,6,'Direccion',1,0,'C',1);
+$pdf->Cell(35,6,'Responsable',1,0,'C',1);
+$pdf->Cell(32,6,'DNI',1,0,'C',1);
+$pdf->Cell(32,6,'Zona',1,0,'C',1);
  
 $pdf->Ln(10);
 //Comenzamos a crear las filas de los registros según la consulta mysql
-require_once "../modelos/zona.php";
-$zona = new zona();
+require_once "../modelos/Comite.php";
+$comite = new Comite();
 
-$rspta = $zona->listar();
+$rspta = $comite->listar();
 
 //Table with filas y columnas
-$pdf->SetWidths(array(70,115));
+$pdf->SetWidths(array(58,30,35,32,32));
 
 while($reg= $rspta->fetch_object())
 {  
     $nombre = $reg->nombre;
+    $direccion=$reg->direccion;
+    $responsable=$reg->responsable;
+    $DNI=$reg->DNI;
+    $Zona=$reg->Zona;
  	
  	$pdf->SetFont('Arial','',10);
-    $pdf->Row(array(utf8_decode($nombre)));
+    $pdf->Row(array(utf8_decode($nombre),$direccion,$responsable,$DNI,$Zona));
 }
  
 //Mostramos el documento pdf

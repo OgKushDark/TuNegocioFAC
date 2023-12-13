@@ -281,6 +281,10 @@ if (empty($regn)) {
                 <li id="navComiteLi"><a href="comite.php"><i class="fa fa-plus-circle"></i> Comite</a></li>
               </ul>
 
+              <ul class="treeview-menu">
+                <li id="navBeneLi"><a href="ListaBeneficiarios.php"><i class="fa fa-plus-circle"></i> Beneficiario</a></li>
+              </ul>
+
 
                 
               

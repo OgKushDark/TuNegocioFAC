@@ -8,7 +8,7 @@ if (!isset($_SESSION["nombre"])) {
 } else {
   require 'modulos/header.php';
 
-  if ($_SESSION['consultav'] == 1) {
+  if ($_SESSION['configuracion'] == 1) {
 ?>
     <!--Contenido-->
     <!-- Content Wrapper. Contains page content -->

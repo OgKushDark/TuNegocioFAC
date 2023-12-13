@@ -10,8 +10,8 @@ function init(){
 		editarB(e);	
 	});
 	
-	$('#navConsultaV').addClass("treeview active");
-    $('#navConsultaVentasVLi').addClass("active");
+	$('#navConfiguracion').addClass("treeview active");
+    $('#navBeneLi').addClass("active");
 }
 
 $.post("../controladores/comite.php?op=selectZona", function(r){
