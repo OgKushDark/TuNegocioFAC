@@ -28,7 +28,7 @@
   <div class="login-box">
     <div class="login-logo">
       <a>
-        <h1><strong>TuNegocioFAC</strong> <i class="fa fa-shopping-cart"></i></h1>
+        <h1><strong>SISTEMA VASO DE LECHE</strong> <i class="fa fa-shopping-cart"></i></h1>
       </a>
     </div><!-- /.login-logo -->
     <div class="loginBox">

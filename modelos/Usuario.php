@@ -71,7 +71,7 @@ Class Usuario
 	//Implementar un método para mostrar los datos de un registro a modificar
 	public function mostrar($idusuario)
 	{
-		$sql="SELECT * FROM usuario WHERE idusuario='$idusuario'";
+		$sql="SELECT idusuario, idpersonal, login, clave, condicion FROM usuario WHERE idusuario='$idusuario'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
@@ -79,6 +79,13 @@ Class Usuario
 	public function listar()
 	{
 		$sql="SELECT a.idusuario,a.idpersonal,c.nombre as trabajador,a.login,a.condicion FROM usuario a INNER JOIN personal c ON a.idpersonal=c.idpersonal";
+		return ejecutarConsulta($sql);		
+	}
+
+	//Implementar un método para verificar si ya tiene un usuario el personal
+	public function existePersonal($idpersonal)
+	{
+		$sql="SELECT idusuario FROM usuario where idpersonal=  '$idpersonal'";
 		return ejecutarConsulta($sql);		
 	}
 

@@ -16,14 +16,22 @@ switch ($_GET["op"]){
 		//Hash SHA256 en la contraseña
 		$clavehash=hash("SHA256",$clave);
 		
-		if (empty($idusuario)){
-			$rspta=$usuario->insertar($idpersonal,$login,$clavehash,$_POST['permiso']);
-			echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
-		}
-		else {
-			$rspta=$usuario->editar($idusuario,$idpersonal,$login,$clavehash,$_POST['permiso']);
-			echo $rspta ? "Usuario actualizado" : "No se pudieron actualizar todos los datos del usuario";
-		}
+	// Verificar si $idpersonal ya está registrado
+$existePersonal = $usuario->existePersonal($idpersonal);
+
+if ($existePersonal) {
+    echo "El ID de personal ya está registrado. No se puede agregar otro registro.";
+} else {
+    if (empty($idusuario) && !empty($_POST['permiso'])) {
+        $rspta = $usuario->insertar($idpersonal, $login, $clavehash, $_POST['permiso']);
+        echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
+    } elseif (!empty($idusuario) && !empty($_POST['permiso'])) {
+        $rspta = $usuario->editar($idusuario, $idpersonal, $login, $clavehash, $_POST['permiso']);
+        echo $rspta ? "Usuario actualizado" : "No se pudieron actualizar todos los datos del usuario";
+    } else {
+        echo "No se han seleccionado permisos";
+    }
+}
 	break;
 
 	case 'desactivar':
