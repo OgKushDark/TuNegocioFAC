@@ -20,7 +20,7 @@ if (!isset($_SESSION["nombre"])) {
 
           <li><a href="inicio.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-          <li class="active">Administrar consulta de ventas</li>
+          <li class="active">Administrar comite:</li>
 
         </ol>
       </section>
@@ -45,6 +45,13 @@ if (!isset($_SESSION["nombre"])) {
               <!-- /.box-header -->
               <!-- centro -->
               <div class="panel-body table-responsive" id="listadoregistros">
+               <div class="panel-body table-responsive" id="listadoregistros">
+                <!-- Agrega el id "btnReporte" al botón -->
+                <a href="../reportes/rptbeneficiarios.php" target="_blank" id="btnReporte" class="btn btn-danger">
+                    <i class="fa fa-file"></i> Reporte
+                </a>
+    
+                </div>
 
                 <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
                   <label>Zona</label>
@@ -199,3 +206,25 @@ if (!isset($_SESSION["nombre"])) {
 }
 ob_end_flush();
 ?>
+
+<script>
+    $(document).ready(function() {
+        // Evento que se ejecuta cuando cambia la selección en el select
+        $("#cbxComite").change(function() {
+            // Obtén el valor seleccionado
+            var idComite = $(this).val();
+
+            // Actualiza el enlace del botón de Reporte
+            actualizarEnlaceReporte(idComite);
+        });
+    });
+
+    // Función para actualizar el enlace del botón de Reporte
+    function actualizarEnlaceReporte(idComite) {
+        // Construye el enlace con el idComite seleccionado
+        var enlaceReporte = "../reportes/rptbeneficiarios.php?idcomite=" + idComite;
+
+        // Actualiza el atributo href del botón de Reporte
+        $("#btnReporte").attr("href", enlaceReporte);
+    }
+</script>

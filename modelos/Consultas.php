@@ -20,6 +20,24 @@ Class Consultas
 		
 		return ejecutarConsulta($sql);		
 	}
+	public function ListaBeneficiarioComite($idcomite)
+	{
+	
+					$sql="SELECT b.idbeneficiario, c.nombre FROM beneficiario b
+							inner join comite c on c.idcomite =b.idcomite
+					 		WHERE b.idcomite ='$idcomite'
+					 		group by c.nombre";
+		
+		
+		
+		return ejecutarConsulta($sql);		
+	}
+
+	public function mostrarC($idcomite)
+	{
+		$sql="SELECT nombre FROM comite WHERE idcomite='$idcomite'";
+		return ejecutarConsultaSimpleFila($sql);
+	}
 
 	public function mostrar($idbeneficiario)
 	{

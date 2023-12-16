@@ -18,7 +18,7 @@ if (empty($regn)) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo $nombrenegocio; ?> | Administrable</title>
+  <title><?php echo $nombrenegocio; ?> | Sistema Vaso de Leche</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -81,7 +81,7 @@ if (empty($regn)) {
                 <span class="label label-danger" id="documentosp"></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">Documentos Pendientes <span class="label label-danger" id="documentosp2"></span></li>
+                <li class="header"> <span class="label label-danger" id="documentosp2"></span></li>
                 <li>
                   <!-- inner menu: contains the actual data -->
                   <ul class="menu" id="DocumentosPendientes">
@@ -97,7 +97,7 @@ if (empty($regn)) {
                 <span class="label label-success" id="creditop"></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">Créditos Pendientes <span class="label label-success" id="creditosp2"></span></li>
+                <li class="header"> <span class="label label-success" id="creditosp2"></span></li>
                 <li>
                   <!-- inner menu: contains the actual data -->
                   <ul class="menu" id="CreditosPendientes">
@@ -105,7 +105,7 @@ if (empty($regn)) {
                   </ul>
                 </li>
                 <li class="footer">
-                  <a href="cuentasxcobrar.php">Ver Todos</a>
+                  
                 </li>
               </ul>
             </li>
@@ -116,14 +116,14 @@ if (empty($regn)) {
                 <span class="label label-warning" id="totalstockbajo"></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">Productos bajos en Existencia <span class="label label-warning" id="totalstockbajo2"></span></li>
+               
                 <li>
                   <!-- inner menu: contains the actual data -->
                   <ul class="menu" id="StocksBajos">
 
                   </ul>
                 </li>
-                <li class="footer"><a href="producto.php">Ver Todos</a></li>
+               
               </ul>
             </li>
 
@@ -261,7 +261,7 @@ if (empty($regn)) {
           if ($_SESSION['configuracion'] == 1) {
             echo '<li class="treeview" id="navConfiguracion">
               <a href="#">
-                <i class="fa fa-cog"></i> <span>Configuracion</span>
+                <i class="fa fa-cog"></i> <span>Mantenimiento</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
