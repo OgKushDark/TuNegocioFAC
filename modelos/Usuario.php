@@ -54,6 +54,29 @@ Class Usuario
 		return $sw;
 	}
 
+	public function editarSC($idusuario,$idpersonal,$login,$permisos)
+	{
+		$sql="UPDATE usuario SET idpersonal='$idpersonal',login='$login'WHERE idusuario='$idusuario'";
+		ejecutarConsulta($sql);
+
+		//Eliminamos todos los permisos asignados para volverlos a registrar
+		$sqldel="DELETE FROM usuario_permiso WHERE idusuario='$idusuario'";
+		ejecutarConsulta($sqldel);
+
+		$num_elementos=0;
+		$sw=true;
+
+		while ($num_elementos < count($permisos))
+		{
+			$sql_detalle = "INSERT INTO usuario_permiso(idusuario, idpermiso) VALUES('$idusuario', '$permisos[$num_elementos]')";
+			ejecutarConsulta($sql_detalle) or $sw = false;
+			$num_elementos=$num_elementos + 1;
+		}
+
+		return $sw;
+	}
+
+
 	//Implementamos un método para desactivar categorías
 	public function desactivar($idusuario)
 	{
@@ -85,9 +108,33 @@ Class Usuario
 	//Implementar un método para verificar si ya tiene un usuario el personal
 	public function existePersonal($idpersonal)
 	{
-		$sql="SELECT idusuario FROM usuario where idpersonal=  '$idpersonal'";
+		$sql="SELECT * FROM usuario where idpersonal=  '$idpersonal'";
 		return ejecutarConsulta($sql);		
 	}
+
+	public function existeContra($idusuario)
+	{
+		$sql = "SELECT clave FROM usuario WHERE idusuario = '$idusuario'";
+$result = ejecutarConsulta($sql);
+
+// Verificar si hay algún resultado en la consulta
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $clave = $row['clave'];
+    // Aquí puedes hacer algo con la contraseña obtenida, como imprimir o retornar
+    echo $clave;
+}
+return mysqli_num_rows($result);
+	}
+
+	public function existeUsuarioPorPersonal($idpersonal)
+{
+    $sql = "SELECT * FROM usuario WHERE idpersonal = '$idpersonal'";
+    $result = ejecutarConsulta($sql);
+    
+    // Verificar si hay algún resultado en la consulta (si existe un usuario)
+    return mysqli_num_rows($result) > 0;
+}
 
 	//Implementar un método para listar los permisos marcados
 	public function listarmarcados($idusuario)

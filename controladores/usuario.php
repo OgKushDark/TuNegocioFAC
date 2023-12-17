@@ -14,25 +14,32 @@ switch ($_GET["op"]){
 	case 'guardaryeditar':
 
 		//Hash SHA256 en la contraseña
-		$clavehash=hash("SHA256",$clave);
+		//$clavehash=hash("SHA256",$clave);
 		
 	// Verificar si $idpersonal ya está registrado
-$existePersonal = $usuario->existePersonal($idpersonal);
+$existeUsuario = $usuario->existeUsuarioPorPersonal($idpersonal);
 
-if ($existePersonal) {
-    echo "El ID de personal ya está registrado. No se puede agregar otro registro.";
-} else {
-    if (empty($idusuario) && !empty($_POST['permiso'])) {
-        $rspta = $usuario->insertar($idpersonal, $login, $clavehash, $_POST['permiso']);
-        echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
-    } elseif (!empty($idusuario) && !empty($_POST['permiso'])) {
-        $rspta = $usuario->editar($idusuario, $idpersonal, $login, $clavehash, $_POST['permiso']);
-        echo $rspta ? "Usuario actualizado" : "No se pudieron actualizar todos los datos del usuario";
+   if (empty($_POST['permiso'])) {
+    echo "Por favor, seleccione al menos un permiso.";
+} elseif (empty($idusuario)) {
+    // Solo verifica si existe un usuario si estás registrando uno nuevo
+    if ($usuario->existeUsuarioPorPersonal($idpersonal)) {
+        echo "El personal ya tiene un usuario registrado.";
     } else {
-        echo "No se han seleccionado permisos";
+        $rspta = $usuario->insertar($idpersonal, $login, $clave, $_POST['permiso']);
+        echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
     }
 }
-	break;
+
+// Validaciones para editar usuario
+if (!empty($idusuario)) {
+    // Verificar si se proporciona una nueva contraseña
+    
+        $rspta = $usuario->editar($idusuario, $idpersonal, $login, $clave, $_POST['permiso']);
+        echo $rspta ? "Usuario actualizado" : "No se pudieron actualizar todos los datos del usuario";
+    
+}
+    break;
 
 	case 'desactivar':
 		$rspta=$usuario->desactivar($idusuario);
@@ -119,9 +126,9 @@ if ($existePersonal) {
 	    $clavea=$_POST['clavea'];
 
 	    //Hash SHA256 en la contraseña
-		$clavehash=hash("SHA256",$clavea);
+		//$clavehash=hash("SHA256",$clavea);
 
-		$rspta=$usuario->verificar($logina, $clavehash);
+		$rspta=$usuario->verificar($logina, $clavea);
 
 		$fetch=$rspta->fetch_object();
 

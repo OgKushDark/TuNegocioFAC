@@ -102,8 +102,11 @@ if (!isset($_SESSION["idpersonal"])) {
               <div class="form-group">
                 <label for="name" class="col-sm-3 control-label">Clave:</label>
                 <div class="col-sm-6">
-                  <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" required>
+                  <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" >
                 </div>
+                 <div class="col-sm-3">
+                    <label><input type="checkbox" id="editarClave"> Editar Clave</label>
+                 </div>
               </div>
 
               <div class="form-group">
@@ -140,7 +143,7 @@ if (!isset($_SESSION["idpersonal"])) {
   require 'modulos/footer.php';
   ?>
   <script type="text/javascript" src="js/usuario.js"></script>
-  <script type="text/javascript" src="js/stocksbajos.js"></script>
+  
 
 <?php
 }
