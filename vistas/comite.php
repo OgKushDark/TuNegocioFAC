@@ -118,14 +118,14 @@ if (!isset($_SESSION["idpersonal"])) {
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Presidente:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="responsable" id="responsable" maxlength="500" placeholder="Responsable" required>
+                  <input type="text" class="form-control" name="responsable" id="responsable" maxlength="500" placeholder="Responsable" required oninput="this.setCustomValidity(''); if (!/^[A-Za-záéíóúÁÉÍÓÚüÜ\s]+$/.test(this.value)) this.setCustomValidity('Solo se permiten letras y espacios');">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">DNI:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="DNI" id="DNI" maxlength="8" placeholder="DNI" required>
+                  <input type="text" class="form-control" name="DNI" id="DNI" maxlength="8" placeholder="DNI" required oninput="this.setCustomValidity(''); if (!/^\d+$/.test(this.value)) this.setCustomValidity('Solo se permiten números');">
                 </div>
               </div>
 
@@ -138,14 +138,14 @@ if (!isset($_SESSION["idpersonal"])) {
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Cocinero:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="cocinero" id="cocinero" maxlength="500" placeholder="cocinero" required>
+                  <input type="text" class="form-control" name="cocinero" id="cocinero" maxlength="500" placeholder="cocinero" required oninput="this.setCustomValidity(''); if (!/^[A-Za-záéíóúÁÉÍÓÚüÜ\s]+$/.test(this.value)) this.setCustomValidity('Solo se permiten letras y espacios');">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="DNIc" class="col-sm-2 control-label">DNI:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="DNIc" id="DNIc" maxlength="8" placeholder="DNI Cocinero" required>
+                  <input type="text" class="form-control" name="DNIc" id="DNIc" maxlength="8" placeholder="DNI Cocinero" required oninput="this.setCustomValidity(''); if (!/^\d+$/.test(this.value)) this.setCustomValidity('Solo se permiten números');">
                 </div>
               </div>
 
@@ -261,7 +261,6 @@ if (!isset($_SESSION["idpersonal"])) {
   require 'modulos/footer.php';
   ?>
   <script type="text/javascript" src="js/comite.js"></script>
-  <script type="text/javascript" src="js/stocksbajos.js"></script>
 <?php
 }
 ob_end_flush();

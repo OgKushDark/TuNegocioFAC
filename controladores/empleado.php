@@ -34,22 +34,22 @@ switch ($_GET["op"]){
 		}
 		if (empty($idpersonal)){
 			$rspta=$empleado->insertar($nombre,$tipo_documento,$num_documento,$idzona1,$idzona2,$idzona3,$imagen);
-			echo $rspta ? "Empleado registrado" : "Empleado no se pudo registrar";
+			echo $rspta ? "Supervisor registrado" : "Supervisor no se pudo registrar";
 		}
 		else {
 			$rspta=$empleado->editar($idpersonal,$nombre,$tipo_documento,$num_documento,$idzona1,$idzona2,$idzona3,$imagen);
-			echo $rspta ? "Empleado actualizado" : "Empleado no se pudo actualizar";
+			echo $rspta ? "Supervisor actualizado" : "Supervisor no se pudo actualizar";
 		}
 	break;
 
 	case 'desactivar':
 		$rspta=$empleado->desactivar($idpersonal);
- 		echo $rspta ? "Empleado Desactivado" : "Empleado no se puede desactivar";
+ 		echo $rspta ? "Supervisor Desactivado" : "Supervisor no se puede desactivar";
 	break;
 
 	case 'activar':
 		$rspta=$empleado->activar($idpersonal);
- 		echo $rspta ? "Empleado activado" : "Empleado no se puede activar";
+ 		echo $rspta ? "Supervisor activado" : "Supervisor no se puede activar";
 	break;
 
 	case 'mostrar':

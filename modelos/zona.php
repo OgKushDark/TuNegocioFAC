@@ -28,7 +28,12 @@ Class Zona
 	//Implementamos un método para desactivar categorías
 	public function desactivar($idzona)
 	{
-		$sql="UPDATE zona SET condicion='0' WHERE idzona='$idzona'";
+		$sql="UPDATE zona SET condicion='0' WHERE idzona='$idzona';";
+		return ejecutarConsulta($sql);
+	}
+	public function desactivarC($idzona)
+	{
+		$sql="UPDATE comite SET condicion='0' WHERE  idzona='$idzona';";
 		return ejecutarConsulta($sql);
 	}
 
@@ -36,6 +41,11 @@ Class Zona
 	public function activar($idzona)
 	{
 		$sql="UPDATE zona SET condicion='1' WHERE idzona='$idzona'";
+		return ejecutarConsulta($sql);
+	}
+	public function activarC($idzona)
+	{
+		$sql="UPDATE comite SET condicion='1' WHERE idzona='$idzona'";
 		return ejecutarConsulta($sql);
 	}
 

@@ -170,7 +170,6 @@ if (!isset($_SESSION["idpersonal"])) {
   require 'modulos/footer.php';
   ?>
   <script type="text/javascript" src="js/supervisor.js"></script>
-  <script type="text/javascript" src="js/stocksbajos.js"></script>
 <?php
 }
 ob_end_flush();

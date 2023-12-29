@@ -207,10 +207,7 @@ if (!isset($_SESSION['nombre'])) {
   require 'modulos/footer.php'
 
   ?>
-  <script src="../public/js/JsBarcode.all.min.js"></script>
-  <script src="../public/js/jquery.PrintArea.js"></script>
   <script src="js/negocio.js"></script>
-  <script type="text/javascript" src="js/stocksbajos.js"></script>
 
 <?php
 }

@@ -201,7 +201,6 @@ if (!isset($_SESSION["nombre"])) {
   require 'modulos/footer.php';
   ?>
   <script type="text/javascript" src="js/ListaBeneficiarios.js"></script>
-  <script type="text/javascript" src="js/stocksbajos.js"></script>
 <?php
 }
 ob_end_flush();

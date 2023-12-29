@@ -4,8 +4,6 @@ var tabla;
 function init(){
 	mostrarform(false);
 	listar();
-	limpiar();
-
 	$("#myModal").on("submit",function(e)
 	{
 		guardaryeditar(e);	
@@ -32,9 +30,12 @@ function init(){
 function limpiar()
 {
 	$("#idpersonal").val("");
+	$("#idpersonal").selectpicker('refresh');
 	$("#login").val("");
 	$("#clave").val("");
 	$("#idusuario").val("");
+	$("#permisos").val("");
+	$("#permisos").selectpicker('refresh');
 
 }
 

@@ -32,6 +32,7 @@ function limpiar()
 	$("#fecha_hora").val("");
 	$("#idpersona").val("");
 	$("#idzona").val("");
+	
 }
 
 //Función mostrar formulario

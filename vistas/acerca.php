@@ -57,5 +57,3 @@ require_once "../modelos/Consultas.php";
 <?php
 require 'modulos/footer.php';
 ?>
-
-<script type="text/javascript" src="js/stocksbajos.js"></script>

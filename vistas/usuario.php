@@ -85,10 +85,10 @@ if (!isset($_SESSION["idpersonal"])) {
             <div class="modal-body">
 
               <div class="form-group">
-                <label for="name" class="col-sm-3 control-label">Personal:</label>
+                <label for="name" class="col-sm-3 control-label">Usuario:</label>
                 <div class="col-sm-6">
                   <input type="hidden" name="idusuario" id="idusuario">
-                  <select id="idpersonal" name="idpersonal" class="form-control selectpicker" data-live-search="true" title="Seleccione Trabajador" required></select>
+                  <select id="idpersonal" name="idpersonal" class="form-control selectpicker" data-live-search="true" title="Seleccione Supervisor" required></select>
                 </div>
               </div>
 
@@ -104,9 +104,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <div class="col-sm-6">
                   <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" >
                 </div>
-                 <div class="col-sm-3">
-                    <label><input type="checkbox" id="editarClave"> Editar Clave</label>
-                 </div>
+                 
               </div>
 
               <div class="form-group">

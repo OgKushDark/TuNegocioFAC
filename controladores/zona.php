@@ -20,12 +20,14 @@ switch ($_GET["op"]){
 
 	case 'desactivar':
 		$rspta=$zona->desactivar($idzona);
+		$rspta=$zona->desactivarC($idzona);
  		echo $rspta ? "Zona Desactivada" : "Zona no se puede desactivar";
  		break;
 	break;
 
 	case 'activar':
 		$rspta=$zona->activar($idzona);
+		$rspta=$zona->activarC($idzona);
  		echo $rspta ? "Zona activada" : "Zona no se puede activar";
  		break;
 	break;

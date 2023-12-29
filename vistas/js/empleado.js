@@ -40,6 +40,14 @@ function limpiar()
 	$("#imagenmuestra").attr("src","../files//personal/user.png");
 	$("#imagenactual").val("user.png");
 	$("#idpersonal").val("");
+	$("#idzona1").val("");
+	    $('#idzona1').selectpicker('refresh');
+
+	    $("#idzona2").val("");
+	    $('#idzona2').selectpicker('refresh');
+
+	    $("#idzona3").val("");
+	    $('#idzona3').selectpicker('refresh');
 }
 
 //Función mostrar formulario

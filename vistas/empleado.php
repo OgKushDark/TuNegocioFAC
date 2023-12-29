@@ -94,7 +94,7 @@ if (!isset($_SESSION["idpersonal"])) {
                 <label for="name" class="col-sm-2 control-label">Nombre:</label>
                 <div class="col-sm-10">
                   <input type="hidden" name="idpersonal" id="idpersonal">
-                  <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre y Apellidos" required>
+                  <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre y Apellidos" required oninput="this.setCustomValidity(''); if (!/^[A-Za-záéíóúÁÉÍÓÚüÜ\s]+$/.test(this.value)) this.setCustomValidity('Solo se permiten letras y espacios');">
                 </div>
 
               </div>
@@ -113,7 +113,7 @@ if (!isset($_SESSION["idpersonal"])) {
 
                 <label for="name" class="col-sm-2 control-label">Número:</label>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento" required>
+                  <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento" required oninput="this.setCustomValidity(''); if (!/^\d+$/.test(this.value)) this.setCustomValidity('Solo se permiten números');">
                 </div>
               </div>
 
@@ -169,8 +169,34 @@ if (!isset($_SESSION["idpersonal"])) {
   require 'modulos/footer.php';
   ?>
   <script type="text/javascript" src="js/empleado.js"></script>
-  <script type="text/javascript" src="js/stocksbajos.js"></script>
 <?php
 }
 ob_end_flush();
 ?>
+<script>
+$(document).ready(function () {
+  var selectedValues = {}; // Cambiado a objeto para un mejor manejo
+
+  // Agrega un evento change a todos los selects con clase selectpicker
+  $('.selectpicker').change(function () {
+    // Obtiene el valor seleccionado
+    var selectedValue = $(this).val();
+
+    // Habilita todas las opciones en todos los selects
+    $('.selectpicker option').prop('disabled', false);
+
+    // Almacena la selección actual en el objeto
+    selectedValues[$(this).attr('id')] = selectedValue;
+
+    // Itera sobre los selects y deshabilita las opciones seleccionadas previamente
+    $.each(selectedValues, function (key, value) {
+      $('.selectpicker').not('#' + key).find('option[value="' + value + '"]').prop('disabled', true);
+    });
+
+    // Actualiza la apariencia del selectpicker
+    $('.selectpicker').selectpicker('refresh');
+  });
+});
+</script>
+
+
