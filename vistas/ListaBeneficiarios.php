@@ -20,7 +20,7 @@ if (!isset($_SESSION["nombre"])) {
 
           <li><a href="inicio.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-          <li class="active">Administrar comite:</li>
+          <li class="active">Administrar Beneficiarios:</li>
 
         </ol>
       </section>

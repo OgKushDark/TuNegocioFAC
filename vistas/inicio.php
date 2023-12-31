@@ -43,7 +43,7 @@ if (!isset($_SESSION["idpersonal"])) {
 
     <!-- Inserción de la imagen -->
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <img src="../files/img/fondo.jpg" alt="Descripción de la imagen" width="500" height="400">
+    <img src="../files/img/fondo.jpg" alt="Descripción de la imagen" width="800" height="700">
 </div>
 
 

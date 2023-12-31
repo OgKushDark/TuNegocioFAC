@@ -58,9 +58,11 @@ if (empty($regn)) {
       <!-- Logo -->
       <a href="#" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>AD</b></span>
-        <b><?php echo $nombrenegocio; ?></b>
-        <!-- logo for regular state and mobile devices -->
+        <span class="logo-mini"><b><img src="../files/img/fondo.jpg" width="50" height="60"></b></span>
+        
+        <img src="../files/img/logos.png" alt="Descripción de la imagen" width="200" height="50">
+        <!--<b><?php echo "aaa"; ?></b>
+         logo for regular state and mobile devices -->
         <!-- <img src="../files/AgroNegocios.png"> -->
       </a>
 

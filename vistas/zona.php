@@ -45,7 +45,7 @@ if (!isset($_SESSION["idpersonal"])) {
           <div class="panel-body table-responsive" class="box-body" id="listadoregistros">
             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Nuevo</i>
             </button>
-            <a href="../reportes/rptcategorias.php" target="_blank"><button class="btn btn-danger"><i class="fa fa-file"></i> Reporte</button></a>
+            <a href="../reportes/rptzonas.php" target="_blank"><button class="btn btn-danger"><i class="fa fa-file"></i> Reporte</button></a>
             <br><br>
             <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover" width="100%">
               <thead>

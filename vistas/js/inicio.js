@@ -1,7 +1,7 @@
 //Función que se ejecuta al inicio
 function init(){
 
-    mostrarInicio();
+    //mostrarInicio();
 
 	//Cargamos los items al select vendedor
 	

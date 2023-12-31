@@ -29,13 +29,13 @@ $y_axis_initial = 25;
 $pdf->SetFont('Arial','B',12);
 
 $pdf->Cell(40,6,'',0,0,'C');
-$pdf->Cell(100,6,'LISTA DE CATEGORIAS',1,0,'C'); 
+$pdf->Cell(100,6,'LISTA DE ZONAS',1,0,'C'); 
 $pdf->Ln(10);
  
 //Creamos las celdas para los títulos de cada columna y le asignamos un fondo gris y el tipo de letra
 $pdf->SetFillColor(232,232,232); 
 $pdf->SetFont('Arial','B',10);
-$pdf->Cell(70,6,'Nombre',1,0,'C',1);
+$pdf->Cell(180,6,'Nombre',1,0,'C',1);
  
 $pdf->Ln(10);
 //Comenzamos a crear las filas de los registros según la consulta mysql
@@ -45,7 +45,7 @@ $zona = new zona();
 $rspta = $zona->listar();
 
 //Table with filas y columnas
-$pdf->SetWidths(array(70,115));
+$pdf->SetWidths(array(180,115));
 
 while($reg= $rspta->fetch_object())
 {  

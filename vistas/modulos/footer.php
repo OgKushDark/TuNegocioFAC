@@ -2,7 +2,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2022</strong>
+        <strong>Copyright &copy; 2023</strong>
     </footer>    
     <!-- jQuery -->
     <script src="../public/js/jquery-3.1.1.min.js"></script>
